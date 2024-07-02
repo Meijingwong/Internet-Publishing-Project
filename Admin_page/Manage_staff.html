@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Staff</title>
+  <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+  <link rel="stylesheet" href="Manage_staff_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+  
+  <script>
+    function redirectTomainPage() {
+      // Change the URL to the desired destination
+      window.location.href = "admin_dashboard.html";
+    }
+
+    function deleteSelectedStaff(button) {
+      const confirmation = confirm("Are you sure you want to remove the Staff?");
+      if (confirmation) {
+        const row = button.closest('tr');
+        row.remove();
+      }
+    }
+
+    function editStaff(button) {
+      const row = button.closest('tr');
+      const name = row.querySelector('.data1 h2').textContent;
+      const email = row.querySelector('.data1 p').textContent;
+      const title = row.querySelector('.people-data h5').textContent;
+      const role = row.querySelector('.role p').textContent;
+      
+      document.getElementById('editForm').style.display = 'block';
+      document.getElementById('editName').value = name;
+      document.getElementById('editEmail').value = email;
+      document.getElementById('editTitle').value = title;
+      document.getElementById('editRole').value = role;
+	  document.getElementById('editStatus').value = role;
+	  
+
+      // Store the row being edited in a hidden field
+      document.getElementById('editRowIndex').value = row.rowIndex;
+    }
+
+    function saveEdit() {
+      const rowIndex = document.getElementById('editRowIndex').value;
+      const table = document.querySelector('tbody');
+      const row = table.rows[rowIndex - 1];
+
+      row.querySelector('.data1 h2').textContent = document.getElementById('editName').value;
+      row.querySelector('.data1 p').textContent = document.getElementById('editEmail').value;
+      row.querySelector('.people-data h5').textContent = document.getElementById('editTitle').value;
+      row.querySelector('.role p').textContent = document.getElementById('editRole').value;
+
+      document.getElementById('editForm').style.display = 'none';
+    }
+
+    function closeForm() {
+      document.getElementById('editForm').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <span id="exit" onclick="redirectTomainPage()" style="cursor:pointer">
+    <img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-1024.png" alt="exit">
+  </span>
+  <section>
+    <div class="board">
+      <table width="100%">
+        <caption>LIST OF STAFF</caption>
+        <thead>
+          <tr>
+            <td>&nbsp Name</td>
+            <td>Title</td>
+            <td>Status</td>
+            <td>Role</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="people">
+              <img src="image/Zi Qi.jpg" alt="Staff 1">
+              <div class="data1">
+                <h2>Chin Zi Qi</h2>
+                <p>1221207168@student.mmu.edu.my</p>
+              </div>
+            </td>
+            <td class="people-data">
+              <h5>Software Engineer</h5>
+              <p>Web dev</p>
+            </td>
+            <td class="active"><p>Active</p></td>
+            <td class="role"><p>Employee</p></td>
+            <td class="edit"><a href="#" onclick="editStaff(this)">Edit</a></td>
+            <td class="delete">
+              <button onclick="deleteSelectedStaff(this)">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <img src="image/Siica.jpg" alt="Staff 2">
+              <div class="data1">
+                <h2>Lee Sii Ca</h2>
+                <p>1221206370@student.mmu.edu.my</p>
+              </div>
+            </td>
+            <td class="people-data">
+              <h5>Product Manager</h5>
+              <p>Manage product</p>
+            </td>
+            <td class="active"><p>Active</p></td>
+            <td class="role"><p>Employee</p></td>
+            <td class="edit"><a href="#" onclick="editStaff(this)">Edit</a></td>
+            <td class="delete">
+              <button onclick="deleteSelectedStaff(this)">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <img src="image/yiting.jpg" alt="Staff 3">
+              <div class="data1">
+                <h2>Lim Yi Ting</h2>
+                <p>1221208482@student.mmu.edu.my</p>
+              </div>
+            </td>
+            <td class="people-data">
+              <h5>Software Engineer</h5>
+              <p>Web dev</p>
+            </td>
+            <td class="active"><p>Active</p></td>
+            <td class="role"><p>Employee</p></td>
+            <td class="edit"><a href="#" onclick="editStaff(this)">Edit</a></td>
+            <td class="delete">
+              <button onclick="deleteSelectedStaff(this)">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <img src="image/meijing.jpg" alt="Staff 4">
+              <div class="data1">
+                <h2>Wong Mei Jing</h2>
+                <p>1221206199@student.mmu.edu.my</p>
+              </div>
+            </td>
+            <td class="people-data">
+              <h5>Network Engineer</h5>
+              <p>Manage networking</p>
+            </td>
+            <td class="active"><p>Active</p></td>
+            <td class="role"><p>Employee</p></td>
+            <td class="edit"><a href="#" onclick="editStaff(this)">Edit</a></td>
+            <td class="delete">
+              <button onclick="deleteSelectedStaff(this)">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="people">
+             <input type="file" id="editImage" accept="image/*">
+              
+              <div class="data1">
+                <h2>Riya Joshi</h2>
+                <p>riys@gnail.com</p>
+              </div>
+            </td>
+            <td class="people-data">
+              <h5>Assistant</h5>
+              <p></p>
+            </td>
+            <td class="active"><p>Unactive</p></td>
+            <td class="role"><p>Employee</p></td>
+            <td class="edit"><a href="#" onclick="editStaff(this)">Edit</a></td>
+            <td class="delete">
+              <button onclick="deleteSelectedStaff(this)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <div class="print">
+    <button onclick="window.print()" style="border:2px solid black;margin-left: 1170px">
+      <i class="fa-solid fa-print"></i> Print this page
+    </button>
+  </div>
+
+  <form name="editstaff"  id="editForm">
+ 
+    <fieldset>
+	  <legend>Edit Staff</legend>
+    <input type="hidden" id="editRowIndex">
+    <label for="editName">Name:</label>
+    <input type="text" id="editName"><br><br>
+    <label for="editEmail">Email:</label>
+    <input type="email" id="editEmail"><br><br>
+    <label for="editTitle">Title:</label>
+    <input type="text" id="editTitle"><br><br>
+    <label for="editRole">Role:</label>
+    <input type="text" id="editRole"><br><br>
+	<label for="editStatus">Status:</label>
+    <select name="Status">
+	   <option value="Active" selected>Active</option>
+	   <option value="Unactive">Unactive</option>
+	   </select><br><br>
+	
+    <button onclick="saveEdit()">Save</button>
+    <button onclick="closeForm()">Cancel</button>
+   </fieldset>
+  </form>
+</body>
+</html>

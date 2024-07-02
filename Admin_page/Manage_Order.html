@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Order</title>
+    <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+    <link type="text/css" rel="stylesheet" href="Manage_order_style.css">
+    <script src="manage_order.js"></script>
+    <style>
+        @media print {
+            .upper-table {
+                display: none;
+            }
+            .downward-table {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <span id="exit" onclick="redirectTomainPage()" style="cursor:pointer">
+        <img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-1024.png" alt="exit">
+    </span>
+    <header>
+        ORDERS ADMINISTRATION
+    </header>
+    <table border="1" class="upper-table">
+        <tr>
+            <td colspan="5">
+                <label for="orderFromDate">Order From/On:</label>
+                <input type="date" id="orderFromDate" name="orderFromDate" min="2000-12-31" max="2024-12-31">
+                <input type="submit" value="today">
+            </td>
+            <td colspan="5">
+                <label for="orderTillDate">Orders Till:</label>
+                <input type="date" id="orderTillDate" name="orderTillDate" min="2000-12-31" max="2024-12-31">
+                <input type="submit" value="today">
+            </td>    
+        </tr>
+        
+        <tr>
+            <td colspan="2" >
+                <input type="checkbox" id="orderStatusCheckbox">
+                <label for="orderStatusCheckbox">Order Status</label>
+            </td>
+        
+            <td colspan="2">
+                <input type="checkbox" id="paymentMethodCheckbox">
+                <label for="paymentMethodCheckbox">Payment Method:</label>
+            </td>
+            
+            <td colspan="2">
+                <label for="searchOrderId">Search Order ID:</label>
+                <input type="text" id="selectedMethodInput" placeholder="Please Select...">
+            </td>
+            
+            <td>
+                <label for="searchOrderIdInput">Name:</label>
+                <input type="text" id="searchOrderIdInput" name="searchOrderId">
+            </td>
+        </tr>
+            
+        <tr>
+            <td rowspan="6" colspan="2">
+                <select id="orderStatusSelect" size="5" multiple>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Deleted">Deleted</option>
+                    <option value="Unauthorized">Unauthorized</option>
+                    <option value="Authorized">Authorized</option>
+                    <option value="Packing">Packing</option>
+                    <option value="Others">Pending</option>
+                </select>
+            </td>
+        
+            <td>
+                <select id="paymentMethodSelect" name="paymentMethod" size="5" multiple>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Email">Email</option>
+                    <option value="Bank">Bank Transfer</option>
+                    <option value="PayPalDirect">PayPal Direct</option>
+                    <option value="PayPalExpress">PayPal Express</option>
+                    <option value="PayPalAdvanced">PayPal Advanced</option>
+                </select>
+            </td>
+            
+            <td colspan="3">
+                <label>Payment: </label>
+                <input type="number" id="selectedMethodInput" placeholder="RM00.00" min="1.00" max="1000">
+            </td>
+            
+            <td>
+                <input type="submit" value="Search">
+                <input type="button" id="newOrderBtn" value="New Order">
+            </td>
+        </tr> 
+    </table>
+        
+    <table class="downward-table">
+        <thead>
+            <tr style="background-color:#E2EAF4">
+                <th>Order ID</th>
+                <th>Name</th>
+                <th>Method</th>
+                <th>Payment</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="orderTableBody">
+            <tr>
+                <td><input type="checkbox" class="orderStatusCheckbox"> 3376</td>
+                <td>Vince ECT</td>
+                <td>PayPal</td>
+                <td>RM 234.00</td>
+                <td>11/1/2024 14:29:00 PM</td>
+                <td>Authorized</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="orderStatusCheckbox"> 3377</td>
+                <td>Andy Testing</td>
+                <td>Email</td>
+                <td>RM 166.00</td>
+                <td>4/3/2024 02:38:33 AM</td>
+                <td>Authorized</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="orderStatusCheckbox"> 3378</td>
+                <td>Low Wiin</td>
+                <td>PayPal Express</td>
+                <td>RM 444.00</td>
+                <td>22/4/2024 12:09:54 PM</td>
+                <td>Authorized</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="orderStatusCheckbox"> 3379</td>
+                <td>Jon Bark</td>
+                <td>Bank Transfer</td>
+                <td>RM 212.00</td>
+                <td>2/8/2024 08:12:45 AM</td>
+                <td>Pending</td>
+            </tr>
+			 <tr>
+                <td><input type="checkbox" class="orderStatusCheckbox"> 2309</td>
+                <td>Muhammad Danish</td>
+                <td>Bank Transfer</td>
+                <td>RM 492.00</td>
+                <td>29/8/2024 20:39:54 AM</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <span style="margin-left: 70px"><input type="button" value="Delete" onclick="deleteRows()"/></span>
+    <button onclick="printcustomerorder()">PRINT REPORT</button>
+
+    <script>
+        function printcustomerorder() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

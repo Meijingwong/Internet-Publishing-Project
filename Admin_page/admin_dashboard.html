@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+   <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+  <link rel="stylesheet" href="admin_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.49.1/apexcharts.min.js" integrity="sha512-qiVW4rNFHFQm0jHli5vkdEwP4GPSzCSp85J7JRHdgzuuaTg31tTMC8+AHdEC5cmyMFDByX639todnt6cxEc1lQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+</head>
+<body>
+   <section>
+     <nav>
+        <div class="container nav_container">
+            <a href="index.html" class="nav_logo" style="font-size:2em; margin-left:-70px;padding-right:30px;">ADMIN</a>
+          
+            <div id="open_nav" onclick="toggleNav()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            
+          
+            <div id="side_nav" class="side_nav">
+                <ul>
+                    <li><a href="Manage_staff.html" target="_blank">Manage Staff</a></li>
+                    <li><a href="Manage_User.html" target="_blank">Manage User</a></li>
+                    <li><a href="Manage_Category.html" target="_blank">Manage Category</a></li>
+                    <li><a href="staff_updateItem.html" target="_blank">Manage Product</a></li>
+                    <li><a href="manage_Order.html" target="_blank">Manage Order</a></li>
+                    <li><a href="Staff_Signin.html">Signin</a></li>
+                </ul>
+            </div>
+            <div class="nav_profile">
+                <div class="avatar">
+                    <span class="icon2"><ion-icon name="person-outline"></ion-icon></span>
+                </div>
+                <ul>
+                   
+                    <li><a href="#"id="signOutLink" target="_blank">Signout</a></li>
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>  
+
+    <main class="main-container">
+        <div class="main-title">
+            <p class="font-weight-bold">DASHBOARD</p>
+        </div>
+        <div class="main-cards">
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">PACKAGES</p>
+                    <ion-icon name="cube-outline"></ion-icon>
+                </div>
+                <span class="text-primary font-weight-bold">24%</span>
+            </div>
+            
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">PURCHASE ORDER</p>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <span class="text-primary font-weight-bold">83</span>
+            </div>
+            
+            <div class="card">
+                <div class="card-inner">
+                    <p class="text-primary">SALES ORDER</p>
+                    <ion-icon name="bar-chart-outline"></ion-icon>
+                </div>
+                <span class="text-primary font-weight-bold">79</span>
+            </div>
+        </div>
+        
+        <div class="charts">
+            <div class="charts-card">
+                <p class="chart-title">Top Sales</p>
+                <div id="bar-chart"></div>
+            </div>
+            <div class="card_ann">
+                <h3 style="color:black"><span id="announcements-num">2</span> Announcements</h3>
+                <div class="announcements">
+                    <div class="announcements-item">
+                        <h4 style="color: black">Ms.Phillips is away this week. I am going to replace her.</h4>
+                        <div class="dots"></div>
+                        <div class="avatar-info">
+                            <img src="image/meijing.jpg" alt="person1">
+                            <div class="avatar-nam">MeiJing</div>
+                        </div> 
+                        <div class="Announcement-time">2 hours ago</div>
+                    </div>
+                    <div class="announcements-item">
+                        <h4 style="color: black">We will be having a meeting this Tuesday.</h4>
+                        <div class="dots"></div>
+                        <div class="avatar-info">
+                            <img src="image/Zi Qi.jpg" alt="person2">
+                            <div class="avatar-nam">Zi Qi</div>
+                        </div> 
+                        <div class="Announcement-time">7 hours ago</div>
+                    </div>
+                </div>
+                <button id="dismiss-all-btn" onclick="dismissAll()">Dismiss All</button>
+                <button id="reset-btn" class="hide" onclick="resetAnnouncements()">Restore</button>
+            </div>
+        </div>
+    </main>
+</section>
+
+
+  <script>
+    
+    window.addEventListener('DOMContentLoaded', (event) => {
+        var sideNav = document.getElementById("side_nav");
+        var bars = document.querySelectorAll('.container .bar1, .container .bar2, .container .bar3');
+
+       
+        sideNav.classList.add("change");
+        bars.forEach(bar => {
+            bar.classList.add("change");
+        });
+
+      
+        sideNav.style.width = "250px";
+    });
+
+ 
+    function toggleNav() {
+      var openNav = document.getElementById("open_nav");
+      var sideNav = document.getElementById("side_nav");
+      var bars = document.querySelectorAll('.container .bar1, .container .bar2, .container .bar3');
+
+    
+      openNav.classList.toggle("change");
+      sideNav.classList.toggle("change");
+      bars.forEach(bar => {
+        bar.classList.toggle("change");
+      });
+
+    
+      if (sideNav.style.width === "250px") {
+        sideNav.style.width = "0";
+      } else {
+        sideNav.style.width = "250px";
+      }
+    }
+
+    // Bar chart options
+    var barChartOptions = {
+      series: [{
+        data: [10, 8, 4, 6, 17, 24, 5, 3]
+      }],
+      chart: {
+        height: 350,
+        type: 'bar',
+        toolbar: {
+          show: false
+        }
+      },
+      colors: ['#246dec', '#cc3c43', '#367952', '#f5b74f'], // Fixed the color declaration
+      plotOptions: {
+        bar: {
+          columnWidth: '45%',
+          distributed: true,
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      legend: {
+        show: false
+      },
+      xaxis: {
+        categories: ["Package 1", "Package 2", "Package 3", "Package 4" ],
+        labels: {
+          style: {
+            colors: ['#246dec', '#cc3c43', '#367952', '#f5b74f'],
+            fontSize: '12px'
+          }
+        }
+      }
+    };
+
+    // Initialize ApexCharts
+    var barChart = new ApexCharts(document.querySelector("#bar-chart"), barChartOptions);
+    barChart.render();
+
+    const announcementsNumE1 = document.getElementById('announcements-num');
+    const announcementsItemE1 = document.querySelectorAll('.announcements-item');
+    const dismissBtnE1 = document.getElementById('dismiss-all-btn');
+    const resetBtnE1 = document.getElementById('reset-btn');
+
+    dismissBtnE1.addEventListener('click', dismissAll);
+    resetBtnE1.addEventListener('click', resetAnnouncements);
+
+    function dismissAll() {
+        announcementsItemE1.forEach(item => {
+            item.classList.add('hide');
+        });
+
+        announcementsNumE1.innerText = '0';
+        document.querySelector('.announcements').style.width = '515px';
+
+        dismissBtnE1.classList.add('hide');
+        resetBtnE1.classList.remove('hide');
+    }
+
+    function resetAnnouncements() {
+        announcementsItemE1.forEach(item => {
+            item.classList.remove('hide');
+        });
+
+        announcementsNumE1.innerText = announcementsItemE1.length;
+        document.querySelector('.announcements').style.width = 'initial';
+
+        dismissBtnE1.classList.remove('hide');
+        resetBtnE1.classList.add('hide');
+    }
+	
+	document.getElementById("signOutLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default link navigation
+    confirmSignOut();
+});
+
+function confirmSignOut() {
+   console.log("confirmSignOut function called.");
+   if (confirm("Are you sure you want to Sign out?")) {
+     console.log("User confirmed sign out.");
+      window.open("Staff_Signin.html", "_blank");
+   } else {
+     console.log("User canceled sign out.");
+   }
+ }
+
+
+
+
+
+</script>
+</body>
+</html>

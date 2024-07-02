@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Category</title>
+	 <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+
+<style>
+body {
+  min-height: 100vh;
+  padding: 13rem 17rem;
+  display: inline-block;
+  justify-content: center;
+  background-image: radial-gradient(farthest-side, #afc8f9 90%, #fff0), radial-gradient(farthest-side, #ddc1fb 90%, #fff0), radial-gradient(circle at 0 0, #d5e0fa, #e5d5f6);
+  background-size: 8rem 7rem, 6rem 6rem, auto;
+  background-position: 30% 10%, 80% 90%, 0;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(50px);
+  font-size: 1.8rem;
+}
+
+
+
+table {
+	width: 50rem;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+table tr {
+  border-top: 1pt solid gray;
+  border-bottom: 1pt solid gray;
+}
+
+.product {
+  text-align: center;
+}
+
+img {
+  width: 50px;
+}
+
+.product-title {
+  font-size: 18pt;
+  font-family: Arial serif;
+  color: dark;
+  padding-bottom: 5pt;
+}
+
+.product-description {
+  margin: 5px 10px 0px 5px;
+  line-height: 2em;
+  font-size: 10pt;
+  color: gray;
+}
+
+.product-price {
+  float: left;
+  font-size: 13pt;
+  padding-right: 1em;
+}
+
+.remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: grey;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  float: right;
+}
+
+.remove-product:hover {
+  background-color: #a44;
+}
+</style>
+
+<script>
+ function redirectTomainPage() {
+        window.location.href = "admin_dashboard.html";
+    }
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("product-price")) {
+    let currentPrice = event.target.textContent.trim();
+    let input = document.createElement("input");
+    input.type = "text";
+    input.value = currentPrice;
+    input.className = "price-input";
+
+    event.target.textContent = "";
+    event.target.appendChild(input);
+
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        saveNewPrice.call(input);
+      
+      }
+    });
+
+    function saveNewPrice() {
+      let newPrice = this.value.trim();
+      let priceContainer = this.parentNode;
+      priceContainer.textContent = newPrice;
+      alert("The product details below are now changed.");
+    }
+
+    event.preventDefault();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const removeButtons = document.querySelectorAll('.remove-product');
+  removeButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      removeItem(this);
+    });
+  });
+
+  function removeItem(btn) {
+    const productRow = btn.closest('tr');
+    productRow.remove();
+  }
+
+});
+</script>
+</head>
+<body>
+   
+    <span id="exit"  onclick="redirectTomainPage()" style="cursor:pointer">
+    <img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-1024.png" alt="exit">
+    </span>
+	
+	<h5 style="text-align: right;"><i>*Click to edit prices and remove items*</i></h5>
+<table>
+  <tr>
+    <td><div class="product">
+      <img src="path_to_image" alt="one day">
+    </div></td>
+    <td>
+      <p class="product-description">Package</p>
+      <div class="product-title">One-Day Tours Plan</div>
+    </td>
+    <td>
+      <div class="product-price">RM 44.00</div>
+      <button class="remove-product">&#10005;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><div class="product">
+      <img src="path_to_image" alt="two days">
+    </div></td>
+    <td>
+      <p class="product-description">Package</p>
+      <div class="product-title">Two-Days Tours Plan</div>
+    </td>
+    <td>
+      <div class="product-price">RM 88.00</div>
+      <button class="remove-product">&#10005;</button>
+    </td>
+  </tr>
+  <tr>
+    <td><div class="product">
+      <img src="path_to_image" alt="three days">
+    </div></td>
+    <td>
+      <p class="product-description">Package</p>
+      <div class="product-title">Three-Days Tours Plan</div>
+    </td>
+     <td>
+      <div class="product-price">RM 128.00</div>
+      <button class="remove-product">&#10005;</button>
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Staff PAGE</title>
+   <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="Manage_Category_style.css"> 
+  <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5/js/bootstrap.min.js"></script>
+  
+  <script>
+   $(document).ready(function(){
+     $("#add-row").click(function(event){
+       event.preventDefault();
+       var PlaceName = $("#PlaceName").val().toUpperCase();
+       var State = $("#State").val().toUpperCase();
+       var Category = $("#Category").val().toUpperCase();
+
+       if (PlaceName && State && Category) {
+         $(".table tbody").append(
+           '<tr class="fadetext">'+
+              '<td><input type="checkbox" class="select-row"></td>'+
+              '<td>'+PlaceName+'</td>'+
+              '<td>'+State+'</td>'+
+              '<td>'+Category+'</td>'+
+           '</tr>'
+        );
+        $("#PlaceName").val('');
+        $("#State").val('');
+        $("#Category").val('');
+      } else {
+        alert("Please fill in all fields.");
+      }
+   });
+
+   $("#select-all").click(function(){
+     var isSelected = $(this).is(":checked");
+     $(".table tbody tr").each(function(){
+       $(this).find('input[type="checkbox"]').prop('checked', isSelected);
+     });
+   });
+
+   $("#remove-row").click(function(event){
+     event.preventDefault();
+     if (confirm("Are you sure you want to delete the selected rows?")) {
+       $(".table tbody tr").each(function(){
+         var isChecked = $(this).find('input[type="checkbox"]').is(":checked");
+         if (isChecked) {
+           $(this).remove();
+         }
+       });
+     }
+   });
+});
+</script>
+</head>
+<body>
+<form>
+ <fieldset>
+   <legend><b>CATEGORY MANAGEMENT</b></legend>
+ <div class="container">
+  <div class="form-div">
+    <div class="row">
+      <div class="col-md-3"> 
+         <input type="text" class="form-control" id="PlaceName" placeholder="PlaceName">
+      </div>
+      <div class="col-md-3"> 
+         <select class="form-control" id="State">
+           <option value=""></option>
+           <option value="Cyberjaya"><b>CYBERJAYA</b></option>
+           <option value="Putrajaya"><b>PUTRAJAYA</b></option>
+         </select>
+      </div>
+      <div class="col-md-3"> 
+         <select class="form-control" id="Category" >
+           <option value=""></option>
+           <option value="LEISURE PLACE">LEISURE PLACE</option>
+           <option value="SHOPPING CENTRE">SHOPPING CENTRE</option>
+           <option value="CAFE">CAFE</option>
+           <option value="HOTEL">HOTEL</option>
+         </select>
+      </div>
+      <div class="col-md-3" style="text-align:right;">
+        <button type="button" class="btn btn-primary" id="add-row"><b>ADD ROW</b></button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <table class="table">
+       <thead>
+          <tr>
+            <th><input type="checkbox" id="select-all">ALL</th>
+            <th>PLACE NAME:</th>
+            <th>STATE:</th>
+            <th>CATEGORY:</th>
+          </tr>
+       </thead>
+       <tbody>
+         <tr>
+            <td><input type="checkbox" class="select-row"></td>
+            <td><b>PUTRAJAYA LAKE</b></td>
+            <td><b>PUTRAJAYA</b></td>
+            <td><b>LEISURE PLACE</b></td>
+         </tr>
+       </tbody>
+    </table>
+    <button type="button" class="btn btn-danger" id="remove-row"><b>REMOVE ROW</b></button>
+  </div>
+</div>
+<span id="exit" style="cursor:pointer">
+    <a href="admin_dashboard.html"><img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-1024.png" alt="exit"></a>
+     </span>
+</fieldset>
+</form>
+
+
+
+</body>
+</html>

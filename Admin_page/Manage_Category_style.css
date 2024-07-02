@@ -1,0 +1,118 @@
+body{
+	background-color:lightblue;
+}
+.container{
+	height:590px;
+}
+.form-div {
+	margin:auto;
+	margin-top: 30px;
+    margin-left: 20px;
+	width:700px;
+    padding: 10px;
+	font-size:30px;
+    box-shadow: 0px 0px 5px black;
+}
+//data insert
+.form-control {
+    width: 200px; 
+	height:30px;
+    margin-bottom: 10px;
+}
+.btn.btn-primary:hover{
+	background-color:lightgreen;
+	height:25px;
+	cursor:pointer;
+	border-radius:3px;
+	box-shadow:3px 3px white;
+}
+.btn.btn-primary{
+	height:30px;
+	
+}
+.btn.btn-danger{
+	margin:auto;
+    margin-left: 20px;
+	height:30px;
+}
+.btn.btn-danger:hover{
+	background-color:red;
+	height:25px;
+	cursor:pointer;
+	border-radius:3px;
+	box-shadow:3px 3px white;
+}
+.table {
+	width:1400px;
+	margin:auto;
+    margin-top: 10px;
+	margin-left:20px;
+	font-size:15px;
+    box-shadow: 0px 0px 5px black; /* Corrected shadow color */
+}
+
+.table thead tr {
+    background-color: darkviolet;
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 10px; /* Corrected the selector */
+    text-align: center; /* Corrected typo in text-align */
+	width:400px;
+}
+
+.table th:hover,
+.table td:hover {
+    background-color: silver;
+}
+.form-control input[type="text"] {
+    text-transform: uppercase;
+}
+.remove-row {
+    color: white;
+    border: 1px solid white;
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+	margin:auto;
+    margin-top: 30px;
+	margin-left:20px;
+}
+.remove-row:hover {
+    cursor: pointer;
+}
+.remove-row:active {
+    width: 200px; 
+    height: 20px; 
+}
+
+/* Added vendor prefixes for wider browser support */
+@keyframes fadetext {
+    0% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Added animation name to the class */
+.fadetext {
+    animation: fadetext 1s ease;
+}
+
+
+#exit img{
+	text-align: center;
+	justify-content: right;
+	right: 0;
+	margin-left: 1350px;
+	width: 40px;
+	height: 40px;
+	margin-top: 3px;
+	bottom: 200px;
+	
+	
+}

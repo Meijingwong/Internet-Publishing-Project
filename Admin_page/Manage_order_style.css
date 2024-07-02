@@ -1,0 +1,102 @@
+body {
+    background: white;
+    padding: 20px; 
+}
+
+header {
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
+table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#exit img {
+    text-align: center;
+    justify-content: right;
+    margin-left: 1400px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.container {
+    margin: 20px;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section div {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.filter-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-section input, .filter-section select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.actions {
+    text-align: right;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

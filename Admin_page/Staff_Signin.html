@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Login & Register</title>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+      background-image: url('image/login_pic.jpg');
+      background-size: cover; 
+}
+
+   
+    img {
+      background-size: auto, 50%;
+      height: 100vh;
+	 
+      background-repeat: no-repeat;
+      margin-right: 400px;
+    }
+
+	h2{
+		letter-spacing: 5px;
+		padding-bottom: 20px;
+		
+		font-size: 30px;
+	}
+
+    .input-box {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      border-bottom: 2px solid black;
+      margin: 30px 0;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: #162938;
+      font-weight: 500;
+      pointer-events: none;
+      transition: top 0.5s; /* Added transition for smooth animation */
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label,
+	.input-box input.clicked ~ label{
+      top: -20px; /* Updated to move the label up */
+    }
+
+    .wrapper {
+      position: relative;
+      width: 400px;
+      height: 420px;
+      background: transparent;
+      border: 2px solid rgb(255, 255, 255);
+	  margin-top: 100px;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+      display: flex;
+      justify-content: center;
+	  align-items: center;
+	  transition: height .2s ease;
+	  overflow: hidden;
+	  transform: translateY(0);
+	  
+    }
+     
+	 
+	 
+     .wrapper .icon-close{
+	   position: absolute;
+	   top: 0;
+	   right: 0;
+	   width: 45px;
+	   height: 45px;
+	   background: black;
+	   color: #ffffff;
+	   display: flex;
+	   justify-content: center;
+	   align-items: center;
+	   border-bottom-left-radius: 20px;
+	   cursor: pointer;
+	   z-index: 1;
+	}
+	
+	.wrapper .icon-close a:hover{
+           color: white;
+    }
+	
+	.wrapper .form-box{
+	   width: 100%;
+	   padding:40px;
+	}
+	
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      color: #162938;
+      font-weight: 600px;
+    }
+
+    .input-box .icon {
+      position: absolute;
+      right: 1px;
+      font-size: 1.2em;
+      color: black;
+      line-height: 57px;
+    }
+
+    .remember-forgot{
+       font-size: .9em;
+       color: black;
+       font-weight: 500;
+       margin: -15px 0 14px;
+       display: flex;
+       justify-content: space-between;
+
+    }
+
+    .remember-forgot label input{
+       accent-color: #162938;
+       margin-right: 3px;
+    }
+ 
+    .remember-forgot a{
+	  color: black;
+	  text-decoration: none;
+	   
+	}
+	
+    .remember-forgot a:hover{
+      text-decoration: underline;
+    }
+
+    .btn2{
+      width:100%;
+      height: 45px;
+      background: black;
+	  color: white;
+      border:2px solid rgb(0, 0, 0);
+      outline: none;
+      border-radius: 50px;
+      cursor:pointer;
+    }
+	
+	
+    .login-register a{
+	  color: black;
+	  text-decoration: none;
+	  font-size: .9em;
+	  text-align: center;
+	  font-weight: 500;
+	  margin: 25px 0 10px;
+	   
+	}
+	
+    .login-register a:hover{
+      text-decoration: underline;
+    }
+	
+
+
+	.wrapper .form-box.login{
+	     transition: transform .18s ease;
+		 transform: translateX(0);
+	 }
+	 
+	 .wrapper.active .form-box.login{
+	      transition: none;
+		  transform: translateX(-400px);
+	 }
+	 
+	 .wrapper .form-box{
+	     width: 100%;
+		 padding: 40px;
+	 }
+	
+	 .wrapper .form-box.register{
+	     width: 300px; 
+	     position: absolute;
+		 transition: none;
+		 transform: translateX(400px);
+	 }
+	 
+	 .wrapper.active .form-box.register{
+	     transition: transform .18s ease;
+		 transform: translateX(0);
+	 }
+	 
+	 .wrapper.active{
+	 transform: translateY(-80px);
+	     height: 520px;
+		 
+	 }
+	 
+     .loader {
+    border: 8px solid #f3f3f3; 
+    border-radius: 50%;
+    border-top: 8px solid #3498db; 
+    width: 12px; 
+    height: 12px;
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite;
+    display: none; 
+    position: relative; 
+    z-index: 1;
+}
+
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <script>
+    function animateLabel(input) {
+        var label = input.previousElementSibling;
+        label.classList.add('see');
+        label.style.top = '-5px'; 
+    }
+    
+    function resetLabelAnimation() {
+        const labels = document.querySelectorAll('.input-box label');
+        labels.forEach(label => {
+            label.classList.remove('see');
+            label.style.top = '';
+        });
+    }
+
+    function resetInputs() {
+        const inputs = document.querySelectorAll('.input-box input');
+        inputs.forEach(input => {
+            input.value = ''; 
+        });
+    }
+
+  function switchToLogin() {
+    const wrapper = document.querySelector('.wrapper');
+    const loginForm = document.querySelector('.form-box.login');
+    const registerForm = document.querySelector('.form-box.register');
+    
+    wrapper.classList.remove('active');
+    loginForm.style.transform = 'translateX(0)';
+    registerForm.style.transform = 'translateX(400px)';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const wrapper = document.querySelector('.wrapper');
+    const loginLink = document.querySelector('.login-link');
+    const registerLink = document.querySelector('.register-link');
+    const loginForm = document.querySelector('.form-box.login');
+    const registerForm = document.querySelector('.form-box.register');
+
+    registerLink.addEventListener('click', () => {
+        wrapper.classList.add('active');
+        loginForm.style.transform = 'translateX(-400px)';
+        registerForm.style.transform = 'translateX(0)';
+        resetLabelAnimation(); 
+        resetInputs(); 
+    });
+
+    loginLink.addEventListener('click', () => {
+        wrapper.classList.remove('active');
+        loginForm.style.transform = 'translateX(0)';
+        registerForm.style.transform = 'translateX(400px)';
+        resetLabelAnimation(); 
+        resetInputs(); 
+    });
+
+   
+    window.addEventListener('pageshow', function(event) {
+        const persisted = (event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2));
+        if (persisted) {
+            resetLabelAnimation();
+            resetInputs();
+        }
+    });
+});
+
+      document.addEventListener("DOMContentLoaded", function() {
+    const loginButton = document.querySelector('.btn2');
+
+    loginButton.addEventListener('click', function(event) {
+       
+        event.preventDefault();
+
+        
+        const emailInput = document.querySelector('input[type="text"]');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+            
+            alert('Please fill in all the fields.');
+            return; 
+        }
+        const loader = document.querySelector('.loader');
+        loader.style.display = 'block';
+
+        setTimeout(function() {
+            loader.style.display = 'none';
+            window.open("admin_dashboard.html", "_blank");
+        }, 3000);
+    });
+});
+
+
+</script>
+</head>
+<body>
+  <!--<img src="image/login_pic.jpg">-->
+     <div class="wrapper active">
+  
+     <span class="icon-close"><a href="../user_page/index.html">
+	<ion-icon name="close-outline"></ion-icon>
+	</a>
+	</span>
+	
+	
+    <div class="form-box login">
+    <h2>Staff Login</h2>
+    <form action="#">
+        <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <label class="see">Staff ID</label>
+            <input type="text" required onclick="animateLabel(this)">
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <label class="see">Password</label>
+            <input type="password" required onclick="animateLabel(this)">
+        </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+            <div class="loader"></div>
+        </div>
+		
+        <button type="submit" class="btn2"><a href="admin_dashboard.html"  target="_blank" style="color:white; text-decoration:none">Login</a> </button>
+		
+        <div class="login-register">
+            <p>Forgot Password? <a href="#" class="register-link">Click here</a></p>
+        </div>
+    </form>
+</div>
+
+
+       <div class="form-box register">
+    <h2>Registration</h2>
+    <form action="#">
+        <div class="input-box">
+            <span class="icon"><ion-icon name="person"></ion-icon></span>
+            <label class="see">Staff ID</label>
+            <input type="text" required onclick="animateLabel(this)">
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <label class="see">Email</label>
+            <input type="text" required onclick="animateLabel(this)">
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <label class="see">Password</label>
+            <input type="password" required onclick="animateLabel(this)">
+        </div>
+        <!--<div class="remember-forgot">
+            <p>Register for:<input type="radio" name="role">User
+			           <input type="radio" name="role">Admin
+			</p>
+        </div>--->
+        <button type="submit" class="btn2" ><a href="#" class="login-link" required onclick="registerUser()" style="color:white; text-decoration:none"> Register</a></button>
+        <div class="login-register">
+           <p>Already have an account? <a href="#" class="login-link" onclick="switchToLogin()">Login</a></p>
+
+        </div>
+    </form>
+</div>
+</div>
+</body>
+</html>
