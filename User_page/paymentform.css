@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  padding: 8px;
+  background-image: radial-gradient(farthest-side, #afc8f9 90%, #fff0), radial-gradient(farthest-side, #ddc1fb 90%, #fff0), radial-gradient(circle at 0 0, #d5e0fa, #e5d5f6);
+  background-size: 7rem 7rem, 6rem 6rem, auto;
+  background-position: 30% 10%, 80% 90%, 0;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(50px);0 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-50 {
+background-image: linear-gradient(360deg,#580e9f 0%, rgb(106,120,235) 100%);
+border-radius: 10px;
+color: #fff;
+  flex: 40%;
+   justify-content: center;
+  align-items: center;
+}
+
+.col-75 {
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
+.col-25 {
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  padding: 10px 250px 20px 250px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+	margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 50px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+.popup {
+	width:400px;
+	background: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.1);
+	text-aligh: center;
+	padding: 0 30px 30px;
+	color:#333;
+	visibility: hidden;
+	transition: transform 0.4s, top 0.4s;
+}
+
+.popup button{
+    display: block;
+    margin:  20px 0px 5px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ffffff;
+    background: #03549a;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.open-popup{
+	visibility: visible;
+	top: 50%;
+	transform: translate(-50%,-50%) scale(1);
+}
+	

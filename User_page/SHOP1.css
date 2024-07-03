@@ -1,0 +1,177 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css)
+
+*{
+	box-sizing:border-box;
+}
+body{
+	background:#111222;
+}
+section{
+	position:relative;
+	display:flex;
+	align-items:center;
+	padding:150px 150px;
+}
+h3{
+	font-family:cursive;
+	color:white;
+	font-size:45px;
+	
+}
+p{
+	font-family:cursive;
+	font-weight:bold;;
+	color:black;
+}
+.sec-title {
+	border-radius:5px;
+	text-shadow:4px 4px 4px grey;
+	font-size:50px;
+	font-weight:bold;
+	border: 1px white solid; 
+	background-color: white;
+}
+.sec-01 {
+  opacity:0.5;
+  background-image: url('D1.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sec-02 {
+  opacity:0.5;
+  background-image: url('TMS4.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sec-03 {
+  opacity:0.5;
+  background-image: url('S3.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sec-04 {
+  opacity:0.5;
+  background-image: url('A2.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sec-05 {
+  opacity:0.5;
+  background-image: url('HM3.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.sec-06 {
+  opacity:0.5;
+  background-image: url('I3.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.container{
+	position:relative;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+.textbox input[type=submit]{
+	cursor:pointer;
+}
+
+.main-title{
+	font-size:80px;
+	text-align:center;
+	height:590px;
+	color:white;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+	text-shadow: 4px 4px yellow;
+}
+.content{
+	font-size:40px;
+	position:relative;
+	width:850px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+/*origin image*/
+.content .image{
+	position:relative;
+	width:450px;
+	height:450px;
+	overflow:hidden;
+	z-index: 1;
+}
+/*Image adjust*/
+.content .image img{
+	z-index:111;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:70%;
+	object-fit:cover;
+	border-radius:50%;
+}
+.content .image img:hover {
+	width:250px;
+	height:250px;
+	border: 4px solid white;
+	cursor:pointer;
+}
+
+.content .text-box{
+	z-index:222;
+	background:rgba(255,255,255,0.1);
+	backdrop-filter:blur(20px);
+	padding:30px;
+	width:80%;
+	height:100%;
+	z-index:0;
+	border:1px solid  rgba(255,255,255,0.1);
+	border-radius:10px;
+	transform:translate(-70px,50px);
+}
+.content .text-box sec-02,
+.content .text-box sec-04,
+.content .text-box sec-06,
+   display: flex;
+   justify-content: flex-end;/* Adjust this value as needed */
+}
+
+.section-title{
+	font-size:30px;
+	margin-bottom:80px;
+}
+.info-title{
+	font-size:20px;
+	margin-bottom:10px;
+}
+.info{
+	width:700px;
+	margin-left:40px;
+}
+.sec-02 .content,
+.sec-04 .content,
+.sec-06 .content { 
+  flex-direction: row-reverse;
+}
+.sec-02 .content .text-box,
+.sec-04 .content .text-box,
+.sec-06 .content .text-box {
+  margin-left: auto;
+}
+.sec-02 .info,
+.sec-04 .info,
+.sec-06 .info {
+    margin-right: 0;
+    margin-left: 40px;
+}

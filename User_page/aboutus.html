@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="aboutus.css">
+    <title>About Us</title>
+	<link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+	<style>
+	  
+        .header {
+           width: 100%;
+		   display: flex;
+           justify-content: space-between;
+           align-items: center;
+           z-index: 100;
+		   padding-bottom: 80px;
+		   padding-top: 10px;
+		  
+           
+}
+
+      .logo {
+        font-size: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        animation: slideRight 1s ease forwards;
+		margin-left: 100px;
+}
+
+         .navbar a {
+           display: inline-block;
+           color: black;;
+           font-size: 20px;
+           text-decoration: none;
+           font-weight: 500;
+           margin-left: 35px;
+           transition: 0.3s;
+           animation: slideTop 1s ease forwards;
+           animation-delay: calc(.2s * var(--i));
+		   
+}
+      .navbar a:last-child {
+    margin-right: 50px;
+}
+
+        .navbar a:hover,
+        .navbar a.active {
+          color: #b7b2a9;
+}
+
+	</style>
+</head>
+<body>
+
+    <section class="about">
+	<header class="header">
+    <div class="logo" style="cursor:pointer"><a href="index.html" style="text-decoration:none;color:black">P&C</a></div>
+       <nav class="navbar">
+       <a href="List_of_place.html" class="item">Category</a>
+      <a href="#" class="item" style="...">Package</a>
+      <a href="contactUs.html" class="item" >ContackUs</a>
+      </nav>
+  </header>
+        <h1>About Us</h1>
+        <p style="font-weight: bold; padding: 20px 25px;">
+            Hey there! So glad you stumbled upon our corner of the internet. 
+			We're a bunch of travel enthusiasts who are absolutely smitten with exploring this beautiful planet we call home. 
+			Here at Our Travel Tribe, we're all about making your wanderlust-fueled dreams a reality, minus the fluff and fuss.
+        </p>
+        <div class="about-info">
+            <div id="readMoreStatebox" class="collapsedState">
+                <p>Our mission is simple: to help you experience the joy of travel in a way that's 
+				authentic, affordable, and downright unforgettable. 
+				Whether you're a seasoned globetrotter or a first-time explorer, we're here to hook you up with 
+				epic experiences that'll leave you with stories to tell for years to come.</p>
+                <button id="readMoreButton">Read More...</button>
+            </div>
+            <div id="readLessStatebox" class="expandedState" hidden>
+                <p><br>Whether you're backpacking solo, traveling with family, or embarking on a group adventure with friends, 
+				we're here to support you every step of the way. From practical travel tips to cultural insights, we're dedicated 
+				to helping you navigate the ups and downs of travel with confidence and ease.</br>
+				<br>
+				But our mission doesn't stop there. We're also committed to making a positive impact on the communities 
+				we visit and the planet we call home. Through sustainable practices, responsible tourism initiatives, 
+				and giving back to local causes, we're striving to leave the places we visit better than we found them.</br>
+				<br>So, when you travel with Our Travel Tribe, you're not just embarking on a journey – 
+				you're joining a movement. A movement to explore, connect, and make a difference in the world, 
+				one adventure at a time. So what are you waiting for? The world is calling – let's answer it together.</br></p>
+                <button id="readLessButton">Read Less...</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h1>Meet Our Team</h1>
+        <div class="team-cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="image/Zi Qi.jpg" alt="Zi Qi">
+                  
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Chin Zi Qi</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">1221207168@student.mmu.edu.my</p>
+                    <button class="button"><a href="mailto:1221207168@student.mmu.edu.my
+">Contact</a></button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="image/Siica.jpg" alt="SiiCa>
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Lee Sii Ca</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">1221206370@student.mmu.edu.my</p>
+                    <button class="button"><a href="mailto:1221206370@student.mmu.edu.my">Contact</a></button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="image/yiting.jpg"
+                        alt="Yiting">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Lim Yi Ting</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">1221208482@student.mmu.edu.my</p>
+                    <button class="button"><a href="mailto:1221208482@student.mmu.edu.my">Contact</a></button>
+                </div>
+            </div>
+			<!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="image/meijing.jpg" alt="meijing">
+                        
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">Wong Mei Jing</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">1221206199@student.mmu.edu.my</p>
+                    <button class="button"><a href="mailto:1221206199@student.mmu.edu.my">Contact</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©2024 MMU All Rights Reserved.</p>
+    </footer>
+
+    <script>
+    document.getElementById("readMoreButton").addEventListener("click", function () {
+        document.getElementById("readMoreStatebox").classList.add("collapsedState");
+        document.getElementById("readLessStatebox").removeAttribute("hidden");
+        this.style.display = "none"; // Hide the "Read More..." button
+        document.getElementById("readLessButton").style.display = "block"; // Show the "Read Less..." button
+    });
+
+    document.getElementById("readLessButton").addEventListener("click", function () {
+        document.getElementById("readMoreStatebox").classList.remove("collapsedState");
+        document.getElementById("readLessStatebox").setAttribute("hidden", "true");
+        this.style.display = "none"; // Hide the "Read Less..." button
+        document.getElementById("readMoreButton").style.display = "block"; // Show the "Read More..." button
+    });
+</script>
+
+</body>
+
+</html>

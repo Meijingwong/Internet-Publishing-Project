@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOURING URBAN CITIES: CYBERJAYA & PUTRAJAYA</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+    <style>
+	  
+        body {
+            font-family: Arial, sans-serif;
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			width: 97%;
+        }
+		
+		.header {
+           width: 100%;
+		   display: flex;
+           justify-content: space-between;
+           align-items: center;
+           z-index: 100;
+		   padding-bottom: 70px;
+		   padding-top: 50px;
+           
+}
+
+      .logo {
+        font-size: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        animation: slideRight 1s ease forwards;
+		margin-left: 70px;
+}
+
+         .navbar a {
+           display: inline-block;
+           color: black;;
+           font-size: 20px;
+           text-decoration: none;
+           font-weight: 500;
+           margin-left: 35px;
+           transition: 0.3s;
+           animation: slideTop 1s ease forwards;
+           animation-delay: calc(.2s * var(--i));
+		   
+}
+       .navbar a:last-child {
+    margin-right: 50px;
+}
+
+
+        .navbar a:hover,
+        .navbar a.active {
+          color: #b7b2a9;
+}
+
+       h3{
+	       font-size: 2em;
+		   margin-top: 50px;
+	   }
+	   
+	    h2{
+	       font-size: 2em;
+		   margin-top: 160px;
+	   }
+        .container {
+            overflow: hidden;
+			margin-left: 200px;
+			margin-right: 200px;
+			margin-bottom:20px;
+        }
+        .filter_card {
+            display: flex;
+            flex-wrap: wrap;
+			margin-top: 40px;
+            justify-content: space-around;
+		    cursor: grab;
+        }
+		
+		 
+		
+        .card {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px;
+            width: calc(25% - 40px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none; /* Hidden by default */
+            transition: transform 0.3s ease-in-out;
+        }
+		
+		  .card:hover {
+		     color: white;
+			 background-color: black;
+		  }
+		  
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        .card_body {
+            padding: 10px;
+        }
+        .show {
+            display: block;
+            transform: scale(1.1);
+        }
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            background-color: #f1f1f1;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #ddd;
+        }
+        .btn.active {
+            background-color: #666;
+            color: white;
+        }
+		
+		/* Footer styles */
+footer {
+    padding: 20px;
+    width: 100%; 
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+
+.icon {
+	padding-top: 16px;
+    padding-bottom: 16px;
+	display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}
+
+.icon:hover {
+	color: gray;
+}
+
+h5 {
+	margin: 10px 0;
+	font-size:15pt;
+}
+    </style>
+</head>
+<body>
+    
+  <section class="sort_category">
+    <!-- Control buttons -->
+	 <header class="header">
+    <div class="logo" style="cursor:pointer"><a href="index.html" style="text-decoration:none;color:black">P&C</a></div>
+       <nav class="navbar">
+      <a href="#" class="item" style="...">Package</a>
+      <a href="ContactUs.html" class="item" >Contact</a>
+      </nav>
+  </header>
+  <h3>TOURING URBAN CITIES: CYBERJAYA</h3>
+    <div id="CyberjayaBtnContainer"  style="margin-top: 50px;">
+        <button class="btn active" onclick="filterCyberjayaSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterCyberjayaSelection('cafe')"> Cafe</button>
+        <button class="btn" onclick="filterCyberjayaSelection('hotel')"> Hotel</button>
+        <button class="btn" onclick="filterCyberjayaSelection('leisure')"> Leisure Place</button>
+        <button class="btn" onclick="filterCyberjayaSelection('shopping')"> Shopping Mall</button>
+    </div>
+
+    
+    <div class="container">
+        <div class="filter_card">
+            <div class="card cafe">
+                <a href="CAFE CYBER_1.html" style="text-decoration:none">
+				<img src="https://th.bing.com/th/id/OIP.WfXc0ducK3DMjKAh-MCF5AHaJ4?rs=1&pid=ImgDetMain" alt="Cafe1">
+                </a>
+				<div class="card_body">
+                    <h4>Cubee Cafe</h4>
+                </div>
+				
+            </div>
+            <div class="card cafe">
+			  <a href="CAFE CYBER_2.html" style="text-decoration:none">
+                <img src="https://images.deliveryhero.io/image/fd-my/LH/o0tv-hero.jpg" alt="Cafe2">
+				</a>
+                <div class="card_body">
+                    <h4>Chubbies Cafe</h4>
+                </div>
+            </div>
+            <div class="card cafe">
+			     <a href="CAFE CYBER_3.html" style="text-decoration:none">
+                <img src="O2.jpeg" alt="Cafe3">
+				</a>
+                <div class="card_body">
+                    <h4>Old Town White Coffee</h4>
+                    
+                </div>
+            </div>
+            <div class="card hotel">
+			  <a href="HOTEL CYBER_1.html" style="text-decoration:none">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipN2YP-RpRXBVoWf9HuVfCt6WxMg9VWmS9E5uvCZ=w1440-h960-k-no" alt="Hotel 1">
+                </a>
+				<div class="card_body">
+                    <h4>Monaco Hotel</h4>
+                    
+                </div>
+            </div>
+            <div class="card hotel">
+			   <a href="HOTEL CYBER_2.html" style="text-decoration:none">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/373177889.jpg?k=3166639b439a0bb6a810794939143abc939589477baf75372105e0e295fe5f6a&o=&hp=1" alt="Hotel 2">
+                </a>
+				<div class="card_body">
+                    <h4>Beryll Inn Hotel</h4> 
+                </div>
+            </div>
+            <div class="card hotel">
+			  <a href="HOTEL CYBER_3.html" style="text-decoration:none">
+                <img src="CZ1.jpeg" alt="Hotel 3">
+				</a>
+                <div class="card_body">
+                    <h4>Cozy Hyve Soho Suites</h4>
+                </div>
+            </div>
+            <div class="card leisure">
+			   <a href="LEISURE CYBER_1.html" style="text-decoration:none">
+                <img src="LG..jpeg" alt="Leisure 1">
+                </a>
+				<div class="card_body">
+                    <h4>Lake Garden</h4>
+                </div>
+            </div>
+            <div class="card leisure">
+			   <a href="LEISURE CYBER_3.html" style="text-decoration:none">
+                <img src="LB.jpeg" alt="Leisure 2">
+                </a>
+				<div class="card_body">
+                    <h4>Lorong Belakang Cyberjaya</h4>
+                </div>
+            </div>
+            <div class="card leisure">
+			    <a href="LEISURE CYBER_2.html" style="text-decoration:none">
+                <img src="We1.jpeg" alt="Leisure 3">
+				</a>
+                <div class="card_body">
+                    <h4>Weplaygames</h4>
+                </div>
+            </div>
+            <div class="card shopping">
+			  <a href="SHOPPING CYBER_1.html" style="text-decoration:none">
+                <img src="dpulze.jpeg" alt="Shopping 1">
+                </a>
+				<div class="card_body">
+                    <h4>Dpulze Shopping Center</h4>
+                </div>
+            </div>
+            <div class="card shopping">
+			   <a href="SHOPPING CYBER_2.html" style="text-decoration:none">
+                <img src="tamarind.jpeg" alt="Shopping 2">
+				</a>
+                <div class="card_body">
+                    <h4>Tamarind Square</h4>
+                </div>
+            </div>
+            <div class="card shopping">
+			    <a href="SHOPPING CYBER_3.html" style="text-decoration:none">
+                <img src="S4.jpeg" alt="Shopping 3">
+				</a>
+                <div class="card_body">
+                    <h4>Shaftsbury</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+	</section>
+	
+	  <section class="sort_category">
+	<h2>TOURING URBAN CITIES: PUTRAJAYA</h2>
+    <div id="PutrajayaBtnContainer"  style="margin-top: 50px;">
+        <button class="btn active" onclick="filterPutrajayaSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterPutrajayaSelection('cafe')"> Cafe</button>
+        <button class="btn" onclick="filterPutrajayaSelection('hotel')"> Hotel</button>
+        <button class="btn" onclick="filterPutrajayaSelection('leisure')"> Leisure Place</button>
+        <button class="btn" onclick="filterPutrajayaSelection('shopping')"> Shopping Mall</button>
+    </div>
+
+   
+    <div class="container">
+        <div class="filter_card">
+            <div class="card cafe">
+			    <a href="CAFE PUTRA_1.html" style="text-decoration:none">
+                <img src="CC4.jpeg" alt="Cafe1">
+				</a>
+                <div class="card_body">
+                    <h4>Celcius Coffee</h4>
+                </div>
+            </div>
+            <div class="card cafe">
+			   <a href="CAFE PUTRA_2.html" style="text-decoration:none">
+                <img src="https://central.menarikdi.com/wp-content/uploads/2022/07/69981702_598171104046902_3426757537062453248_n-1024x768.jpg" alt="Cafe2">
+                </a>
+				<div class="card_body">
+                    <h4>Min Coffee Putrajaya</h4>
+                </div>
+            </div>
+            <div class="card cafe">
+			   <a href="CAFE PUTRA_3.html" style="text-decoration:none">
+                <img src="https://www.girlwiththepassport.com/wp-content/uploads/2019/12/The-Old-Compass-335x242.jpg" alt="Cafe3">
+                </a>
+				<div class="card_body">
+                    <h4>Albatross Coffee</h4>
+                </div>
+            </div>
+            <div class="card hotel">
+			   <a href="HOTEL PUTRA_1.html" style="text-decoration:none">
+                <img src="https://pix8.agoda.net/hotelImages/502321/3119288/4c77c1a31aa8c585fadda034e0e47c65.jpg?ca=17&ce=1&s=1024x" alt="Hotel 1">
+                </a>
+				<div class="card_body">
+                    <h4>The Everly Putrajaya Hotel</h4>
+                </div>
+            </div>
+            <div class="card hotel">
+			   <a href="HOTEL PUTRA_2.html" style="text-decoration:none">
+                <img src="https://bpprodstorage.blob.core.windows.net/bpprodcontainer/731918/images/650c426c-7795-4ff0-9c07-b90ce74daf50DoubleTree-by-Hilton-Putrajaya-Lakeside-King-Executive-Lake-View-Suite-3.jpg" alt="Hotel 2">
+                </a>
+				<div class="card_body">
+                    <h4>DoubleTree By Hilton Putrajaya Lakeside Hotel</h4>
+                </div>
+            </div>
+            <div class="card hotel">
+			  <a href="HOTEL PUTRA_3.html" style="text-decoration:none">
+                <img src="https://y.cdrst.com/foto/hotel-sf/8eb7a/granderesp/dorsett-putrajaya-general-cc73047.jpg" alt="Hotel 3">
+                </a>
+				<div class="card_body">
+                    <h4>Dorsett Putrajaya</h4>
+                </div>
+            </div>
+            <div class="card leisure">
+			 <a href="LEISURE PUTRA_1.html" style="text-decoration:none">
+                <img src="https://th.bing.com/th/id/OIP.pGf-qzEKVv2DT_v4ovh8lwHaFj?pid=ImgDet&w=474&h=355&rs=1" alt="Leisure 1">
+                </a>
+				<div class="card_body">
+                    <h4>Taman Saujana Hijau Putrajaya</h4>
+                </div>
+            </div>
+            <div class="card leisure">
+			   <a href="LEISURE PUTRA_2.html" style="text-decoration:none">
+                <img src="https://i.pinimg.com/originals/1e/c7/10/1ec7104eb2f9588d9ae3fb48646fa895.jpg" alt="Leisure 2">
+                </a>
+				<div class="card_body">
+                    <h4>Botanical Garden</h4>
+                   
+                </div>
+            </div>
+            <div class="card leisure">
+			  <a href="LEISURE PUTRA_3.html" style="text-decoration:none">
+                <img src="https://th.bing.com/th/id/OIP.yzwwXPmVKEj1E_-XWsnQvAHaE6?rs=1&pid=ImgDetMain" alt="Leisure 3">
+                </a>
+				<div class="card_body">
+                    <h4>Putrajaya Equestrian Park</h4>
+                   
+                </div>
+            </div>
+            <div class="card shopping">
+			   <a href="SHOPPING PUTRA_1.html" style="text-decoration:none">
+                <img src="https://gowhere.my/wp-content/uploads/2015/06/Alamanda-Shopping-Centre-3.jpeg" alt="Shopping 1">
+                </a>
+				<div class="card_body">
+                    <h4>Alamanda Shopping Center</h4>
+                    
+                </div>
+            </div>
+            <div class="card shopping">
+			  <a href="SHOPPING PUTRA_2.html" style="text-decoration:none">
+                <img src="https://media.freemalaysiatoday.com/wp-content/uploads/2023/05/033bfc44-hero-market-100523-foursquare-2.jpg" alt="Shopping 2">
+                </a>
+				<div class="card_body">
+                    <h4>Hero Market</h4>
+                    
+                </div>
+            </div>
+            <div class="card shopping">
+			  <a href="SHOPPING PUTRA_3.html" style="text-decoration:none">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/featuredimg_20200104125823.jpg" alt="Shopping 3">
+                </a>
+				<div class="card_body">
+                    <h4>Ioi City Putrajaya</h4>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+	<h5>Find Us On</h5>
+	<div class="icon">
+		<i class="fa fa-facebook-official"></i>
+		<i class="fa fa-instagram"></i>
+		<i class="fa fa-snapchat"></i>
+		<i class="fa fa-pinterest-p "></i>
+		<i class="fa fa-twitter"></i>
+		<i class="fa fa-linkedin"></i>
+	</div>
+	<p>© 2024 MMU. All rights reserved.</p>
+	</footer>
+   <script>
+    
+    function filterCyberjayaSelection(category) {
+        var cards = document.querySelectorAll(".sort_category:nth-child(1) .card"); // Select only cards within the Cyberjaya section
+        if (category === "all") {
+            cards.forEach(card => {
+                card.style.display = "block";
+            });
+        } else {
+                cards.forEach(card => {
+                if (card.classList.contains(category)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    }
+
+   
+    function filterPutrajayaSelection(category) {
+        var cards = document.querySelectorAll(".sort_category:nth-child(2) .card"); // Select only cards within the Putrajaya section
+        if (category === "all") {
+            cards.forEach(card => {
+                card.style.display = "block";
+            });
+        } else {
+            cards.forEach(card => {
+                if (card.classList.contains(category)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    }
+	
+	 
+    filterCyberjayaSelection('all');
+    filterPutrajayaSelection('all');
+</script>
+
+
+</body>
+</html>

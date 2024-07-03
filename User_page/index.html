@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOURING URBAN CITIES: CYBERJAYA & PUTRAJAYA</title>
+	<link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+       <link rel="stylesheet" href="index_styles.css">
+	    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>    
+    
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+</head>
+<style>
+    
+	.abouts{
+	    padding-bottom: 50px;
+	}
+    .abouts h1{
+	    text-align: center;
+		font-family:"Times New Roman", Times, serif;
+		font-size: 50px;
+		letter-spacing: 10px;
+		
+	}
+	
+	#subbtn{
+	    cursor: grab;
+		font-size: 30px;
+	}
+	
+	#subbtn:hover{
+	    background-color: white;
+	}
+	
+	.place {
+           	background-color: white;
+        }
+		
+	
+	 .container {
+	       
+			margin-left: 60px;
+			margin-right: 60px;
+            overflow: hidden;
+			margin-left: 200px;
+			margin-right: 200px;
+        }
+        .filter_card {
+            display: flex;
+            flex-wrap: wrap;
+			margin-top: 40px;
+            justify-content: space-around;
+		    cursor: grab;
+        }
+		
+		 
+		
+        .card {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px;
+            width: calc(25% - 40px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none; /* Hidden by default */
+            transition: transform 0.3s ease-in-out;
+        }
+		
+		  .card:hover{
+		     color: white;
+			 background-color: black;
+		  }
+		  
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        .card_body {
+            padding: 10px;
+        }
+        .show {
+            display: block;
+            transform: scale(1.1);
+        }
+		
+		.more-btn {
+    text-decoration: none;
+}
+
+       .more-input {
+         padding: 10px 40px; 
+         font-size: 16px;
+         border: none;
+}
+
+#searchUL {
+  list-style-type: none;
+  padding-left: 80px;
+  margin-left: 500px;
+  margin-right: 350px;
+  display: none; /* Initially hide the list */
+  
+}
+
+#searchUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+
+#searchUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+       
+</style>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const cookiePopup = document.querySelector('.cookies');
+    const acceptCookiesBtn = document.querySelector('.accept-cookies');
+    const declineCookiesBtn = document.querySelector('.decline-cookies');
+
+    function closeCookieBanner() {
+        cookiePopup.style.display = 'none';
+    }
+
+    acceptCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookies_accepted', true);
+        closeCookieBanner();
+    });
+
+    declineCookiesBtn.addEventListener('click', function() {
+        localStorage.setItem('cookies_declined', true);
+        closeCookieBanner();
+    });
+
+    const cookiesAccepted = localStorage.getItem('cookies_accepted');
+
+    if (!cookiesAccepted) {
+        cookiePopup.style.display = 'block';
+    }
+
+    
+
+
+    filterSelection("all");
+
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("card");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+                element.className += " " + arr2[i];
+            }
+        }
+    }
+
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+
+
+    var countDownDate = new Date("November 10, 2024 00:00:00").getTime();
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+        }
+    }, 1000);
+
+    let select1 = document.getElementById("select");
+    let select2 = document.getElementById("select2");
+    let list1 = document.getElementById("list1");
+    let list2 = document.getElementById("list2");
+    let icon1 = document.getElementById("icon");
+    let icon2 = document.getElementById("icon2");
+    let span1 = document.getElementById("span1");
+    let span2 = document.getElementById("span2");
+
+    select1.onclick = function() {
+        list1.classList.toggle("open");
+        icon1.style.transform = icon1.style.transform === "rotate(-180deg)" ? "rotate(0deg)" : "rotate(-180deg)";
+    }
+
+    select2.onclick = function() {
+        list2.classList.toggle("open");
+        icon2.style.transform = icon2.style.transform === "rotate(-180deg)" ? "rotate(0deg)" : "rotate(-180deg)";
+    }
+
+    window.onclick = function (e) {
+        if (
+            e.target.id !== "select" &&
+            e.target.id !== "icon" &&
+            e.target.id !== "span1" &&
+            e.target.id !== "select2" &&
+            e.target.id !== "icon2" &&
+            e.target.id !== "span2"
+        ) {
+            list1.classList.remove("open");
+            icon1.style.transform = "rotate(0deg)";
+            list2.classList.remove("open");
+            icon2.style.transform = "rotate(0deg)";
+        }
+    };
+
+    const listItems1 = document.querySelectorAll("#list1 li");
+    const listItems2 = document.querySelectorAll("#list2 li");
+
+    for (let item of listItems1) {
+        item.onclick = function (e) {
+            span1.innerText = e.target.innerText;
+            list1.classList.remove("open");
+            icon1.style.transform = "rotate(0deg)";
+        };
+    }
+
+    for (let item of listItems2) {
+        item.onclick = function (e) {
+            span2.innerText = e.target.innerText;
+            list2.classList.remove("open");
+            icon2.style.transform = "rotate(0deg)";
+        };
+    }
+
+    document.querySelector('.fa-computer-mouse').addEventListener('mousedown', function() {
+        // Smoothly scroll the page down
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
+});
+function setupDropdown(selectId, listId, iconId, spanId) {
+setupDropdown("select", "list1", "icon", "span1");
+            setupDropdown("select2", "list2", "icon2", "span2");
+    }
+
+ 
+  function myFunction() {
+            var input = document.getElementById("myInput");
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById("searchUL");
+            var li = ul.getElementsByTagName("li");
+
+            ul.style.display = "none";
+
+            for (var i = 0; i < li.length; i++) {
+                var a = li[i].getElementsByTagName("a")[0];
+                var txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                    ul.style.display = "block"; // Show the list if there are matches
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+ document.addEventListener('DOMContentLoaded', function() {
+        
+        setupDropdown("select", "list1", "icon", "span1");
+        setupDropdown("select2", "list2", "icon2", "span2");
+    });
+</script>
+   
+<body>
+     <div class="cookies">
+       <p>We use cookies to improve your experience on our website. <a href="#" class="cookie_learn" style="color:black"><u>Learn more</u></a></p>
+       <button class="accept-cookies" style="background-color:#E8E8E8">Accept</button>
+       <button class="decline-cookies" style="color:white; background-color:black">Decline</button>
+     </div>
+
+    <section class="header-section">
+        <header>
+		 
+          <nav class="nav-links">
+		  <h1>P&C</h1>
+            <ul class="group">
+			   <li id="first"><a href="contactUs.html" target="_blank" style="color: black; text-transform:uppercase">Contact_Us</a></li>
+                <li class="dropdown2">
+                    <a href="#" style="color: black">LOGIN</a>
+                    <div class="log">
+                        <ul>
+                            <li><a href="User_Signin.html" target="_blank">User</a></li>
+                            <li><a href="../Admin_page/Staff_Signin.html" target="_blank">Staff</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul> 
+          </nav>
+
+          <div class="image-box">
+            <h1>Cyberjaya & Putrajaya</h1>
+            <img class="zoom" src="image/celsius-coffee.jpg" alt="Celsius coffee.co">
+            <img class="zoom3" src="image/dpulze-shopping-center.jpg" alt="Dpulze shopping center">
+            <img class="zoom4" src="image/seri-wawasan-bridge.jpg" alt="Seri wawasan bridge">
+            <img class="zoom5" src="image/Taman-Putra-Perdana.jpg" alt="Taman-Putra-Perdana">
+            
+            <div class="search-bar">
+   
+        <div id="select" class="dropdown-text">
+            <p id="span1">Categories</p>
+            <i id="icon" class="fa-solid fa-chevron-down"></i>
+            <ul id="list1">
+                <li class="option">All categories</li>
+                <li class="option">Leisure Place</li>
+                <li class="option">Shopping Center</li>
+                <li class="option">Cafe</li>
+                <li class="option">Hotel</li>
+            </ul>
+        </div>
+        <div id="select2">
+            <p id="span2">Location</p>
+            <i id="icon2" class="fa-solid fa-chevron-down"></i>
+            <img>
+            <ul id="list2">
+                <li class="option">Any</li>
+                <li class="option">Cyberjaya</li>
+                <li class="option">Putrajaya</li>
+            </ul>
+        </div>
+        <input type="text" onkeyup="myFunction()" id="myInput" placeholder="Search In All Categories">
+        <button type="submit" style="margin-right:20px;margin-top: 10px;cursor:pointer;border: none;background-color:white"><i class="fa-solid fa-magnifying-glass"></i></button>
+</div>
+
+<!-- UL for search results -->
+<ul id="searchUL">
+    <li><a href="CAFE PUTRA_3.html" target="_blank">Albatross Coffee</a></li>
+	<li><a href="SHOPPING PUTRA_3.html" target="_blank">Alamanda Shopping Mall</a></li>
+    <li><a href="HOTEL CYBER_2.html" target="_blank">Beryll Inn Hotel</a></li>
+	<li><a href="LEISURE PUTRA_2.html" target="_blank">Botanical Garden</a></li>
+    <li><a href="CAFE PUTRA_1.html" target="_blank">Celcius Coffee</a></li>
+    <li><a href="CAFE CYBER_1.html" target="_blank">Cubee Cafe</a></li>
+    <li><a href="CAFE CYBER_2.html" target="_blank">Chubbies Cafe</a></li>
+    <li><a href="HOTEL CYBER_3.html" target="_blank">Cozy Hyve Soho Suites</a></li>
+    <li><a href="SHOPPING PUTRA_1.html" target="_blank">Dpulze Shopping Center</a></li>
+    <li><a href="HOTEL PUTRA_3.html" target="_blank">Dorse Putrajaya</a></li>
+    <li><a href="HOTEL PUTRA_2.html" target="_blank">DoubleTree By Hilton Putrajaya Lakeside Hotel</a></li>
+    <li><a href="SHOPPING PUTRA_2.html" target="_blank">Hero Market</a></li>
+	<li><a href="SHOPPING PUTRA_3.html" target="_blank">Ioi City Mall</a></li>
+    <li><a href="LEISURE CYBER_1.html" target="_blank">Lake Garden</a></li>
+	<li><a href="LEISURE CYBER_2.html" target="_blank">Lorong Belakang Cyberjaya</a></li>
+	<li><a href="LEISURE PUTRA_3.html" target="_blank">Putrajaya Equestrian Park</a></li>
+	<li><a href="SHOPPING CYBER_3.html" target="_blank">Shaftsbury</a></li>
+	<li><a href="SHOPPING CYBER_2.html" target="_blank">Tamarind Square</a></li>
+	<li><a href="LEISURE PUTRA_1.html" target="_blank">Taman Saujana Hijau Putrajaya</a></li>
+	<li><a href="HOTEL PUTRA_1.html" target="_blank">The Everly Putrajaya Hotel</a></li>
+	<li><a href="LEISURE CYBER_2.html" target="_blank">Weplaygames</a></li>
+
+</ul>
+
+        </header>
+    </section>
+    <hr/>
+    <section class="intro">
+        <div class="content">
+            <h3><strong>Introduction to <br>Cyberjaya & <br>Putrajaya</strong></h3>
+            <p> Cyberjaya and Putrajaya offer unique experiences, <br>blending modernity with green spaces and intelligent <br>infrastructure. Cyberjaya known as Malaysia's Silicon <br>Valley, it's the technological playground. For Putrajaya,<br>it's the official federal administrative hub center <br>of Malaysia.</p>
+          
+        </div>
+        <video class="intro_video" autoplay muted loop>
+            <source src="putrajaya.mp4" type="video/mp4">
+        </video>
+    </section>
+	
+    <section class="place" style="background-color:white">
+	<header style="margin-top:50px">
+	  <h1 style="text-align:center;color: rgb(125, 218, 88);letter-spacing: 5px;">CATEGORY</h1>
+       <h2 style="text-align:center; margin-bottom: 50px;">Tours & Travel Services</h2>
+	</header>
+	
+   
+    <!-- The filterable elements -->
+    <div class="container">
+        <div class="filter_card">
+            <div class="card cafe">
+                <img src="https://th.bing.com/th/id/OIP.WfXc0ducK3DMjKAh-MCF5AHaJ4?rs=1&pid=ImgDetMain" alt="Cafe1">
+                <div class="card_body">
+                    <h4>Cubee Cafe</h4>
+                                   </div>
+            </div>
+            <div class="card cafe">
+                <img src="https://images.deliveryhero.io/image/fd-my/LH/o0tv-hero.jpg" alt="Cafe2">
+                <div class="card_body">
+                    <h4>Chubbies Cafe</h4>
+                   
+                </div>
+            </div>
+            <div class="card cafe">
+                <img src="O2.jpeg" alt="Cafe3">
+                <div class="card_body">
+                    <h4>Old Town White Coffee</h4>
+                    
+                </div>
+            </div>
+            <div class="card hotel">
+                <img src="https://lh5.googleusercontent.com/p/AF1QipN2YP-RpRXBVoWf9HuVfCt6WxMg9VWmS9E5uvCZ=w1440-h960-k-no" alt="Hotel 1">
+                <div class="card_body">
+                    <h4>Monaco Hotel</h4>
+                   
+                </div>
+            </div>
+            <div class="card hotel">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/373177889.jpg?k=3166639b439a0bb6a810794939143abc939589477baf75372105e0e295fe5f6a&o=&hp=1" alt="Hotel 2">
+                <div class="card_body">
+                    <h4>Beryll Inn Hotel</h4>
+                    
+                </div>
+            </div>
+            <div class="card hotel">
+                <img src="CZ1.jpeg" alt="Hotel 3">
+                <div class="card_body">
+                    <h4>Cozy Hyve Soho Suites</h4>
+                    
+                </div>
+            </div>
+            <div class="card leisure">
+                <img src="LG..jpeg" alt="Leisure 1">
+                <div class="card_body">
+                    <h4>Lake Garden</h4>
+                   
+                </div>
+            </div>
+            <div class="card leisure">
+                <img src="LB.jpeg" alt="Leisure 2">
+                <div class="card_body">
+                    <h4>Lorong Belakang Cyberjaya</h4>
+                    
+                </div>
+            </div>
+            <div class="card leisure">
+                <img src="We1.jpeg" alt="Leisure 3">
+                <div class="card_body">
+                    <h4>Weplaygames</h4>
+                   
+                </div>
+            </div>
+            <div class="card shopping">
+                <img src="dpulze.jpeg" alt="Shopping 1">
+                <div class="card_body">
+                    <h4>Dpulze Shopping Center</h4>
+                    
+                </div>
+            </div>
+            <div class="card shopping">
+                <img src="tamarind.jpeg" alt="Shopping 2">
+                <div class="card_body">
+                    <h4>Tamarind Square</h4>
+                   
+                </div>
+            </div>
+            <div class="card shopping">
+                <img src="S4.jpeg" alt="Shopping 3">
+                <div class="card_body">
+                    <h4>Shaftsbury</h4>   
+                </div>
+            </div>
+        </div>
+    </div>
+	  <div id="morebtn" style="text-align:right;margin-right:200px;margin-top:30px">
+       <a href="User_Signin.html" class="more-btn" target="_blank"><input type="Submit" Value="More" class="more-input">
+		<i class="fa-solid fa-angles-right"></i>
+	    </a>
+</div>
+
+</section>
+    <section class="countdown">
+        <img src="image/countdown.jpeg">
+        <div class="count">
+            <p>Promotion</p>
+            <h6>Giving <span style="color: red">RM15</span> discount <br>for early birds</h6>
+            <div id="count-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <button>Learn More</button>
+        </div>
+    </section>
+     <section class="abouts">
+	  <h1>About Us</h1>
+	  <a href="aboutus.html" target="_blank"><input type="submit" value="Our Team" name="subbtn" id="subbtn" style="margin-left:660px;margin-top: 30px"></a>
+	 </section>
+    <section id="footers">
+        <footer class="foo">
+            <div class="end">
+                <h4>Quick links</h4>
+                <a href="index.html"><i class="fas fa-angle-right"></i> Home</a>
+                <a href="List_of_place.html"><i class="fas fa-angle-right"></i> Category</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Package</a>
+                <a href="contactUs.html"><i class="fas fa-angle-right"></i> Contact Us</a>
+            </div>
+
+            <div class="end">
+                <h4>Extra links</h4>
+               
+                <a href="aboutus.html"><i class="fas fa-angle-right"></i> About us</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Privacy policy</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Terms of use</a>
+            </div>
+
+            <div class="end">
+                <h4>Contact info</h4>
+                <a href="#"><i class="fas fa-phone"></i>+12-926-1928</a>
+                <a href="#"><i class="fas fa-phone"></i>+60-236-8900</a>
+                <a href="#"><i class="fas fa-envelope"></i>whein@gmail.com</a>
+                <a href="#"><i class="fas fa-map"></i>63000 Cyberjaya, Selangor</a>
+            </div>
+
+            <div class="end">
+                <h4>Follow us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            </div>
+        </footer>
+    </section>
+
+
+   
+</body>
+</html>

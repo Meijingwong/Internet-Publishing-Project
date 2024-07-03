@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #1f242d;
+  color: #fff;
+}
+.contact-number{
+    display: none;
+	opacity: 0;
+    animation: fadeIn 1s forwards;
+	transition: 0.3s;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+.navbar .contact:hover .contact-number {
+      display: inline; 
+}
+.wrapper{
+	width:50%;
+	height:50vh;
+	display:flex;
+	margin-left: 50px; 
+}
+.container{
+	height:380px;
+	display:flex;
+}
+.card{
+	width:70px;
+	border-radius:1rem;
+	background-size:cover;
+	cursor:pointer;
+	overflow:hidden;
+	margin:5px;
+	display:flex;
+	align-items:flex-end;
+	transition: .6s cubic-bezier(.28,-0.03,0,.99);
+	box-shadow:0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+
+/*for the container part*/
+input{
+	display:none;
+}
+input:checked+label {
+	 width:350px;
+}
+
+input:checked+label,dscription {
+	opacity:1;
+	transform: translateY(0);
+}
+
+.card[for="c1"]{
+background-image:url('E1.jpeg');
+}	
+.card[for="c2"]{
+background-image:url('E2.jpg');
+}	
+.card[for="c3"]{
+background-image:url('E3.jpeg');
+}	
+.card[for="c4"]{
+background-image:url('E4.jpeg');
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  animation: slideRight 1s ease forwards;
+}
+/*HOME MORE ABOUT MAPREVIEW CONTACT*/
+.navbar a {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #b7b2a9;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  padding:70px 10% 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
+}
+.home-content {
+  width: calc(50% - 50px); /* Update width */
+  padding-right: 50px; /* Add padding */
+}
+
+.home-content h3{
+	font-size:32px;
+	font-weight:700;
+	opacity:0;
+	animation:slideBottom is ease forwards;
+	animation-delay: .7s;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+}
+
+.home-content h3 span {
+  color: #b7b2a9;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content p {
+  font-size: 16px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 0.5s;
+}
+.home-img {
+  position: absolute; /* Add position */
+  top: 0; /* Add top */
+  right: 0; /* Add right */
+  width: 50%; /* Update width */
+  border-radius:10px;
+}
+
+.home-img img {
+  max-width: 450px;
+  border-radius: 50%;
+  margin-right: -20px;
+  box-shadow: 0 0 20px #b7b2a9;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2s 3s;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #b7b2a9;
+  border-radius: 50%;
+  color: #b7b2a9;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  animation: slideLeft 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.social-media a:hover {
+  background: #b7b2a9;
+  color: #1f242d;
+  box-shadow: 0 0 20px #b7b2a9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #b7b2a9;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px #b7b2a9;
+  font-size: 16px;
+  color: #1f242d;
+  letter-spacing: 1px;
+  font-weight: bold;
+  transition: 0.5s ease;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px #b7b2a9;
+}
+
+.btn:active {
+  color: #b7b2a9;
+  border: 2px solid #b7b2a9;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

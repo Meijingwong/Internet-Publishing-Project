@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"href="contactUs.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Contact us Page</title>
+	<link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+	<style>
+	  
+        .header {
+           width: 100%;
+		   display: flex;
+           justify-content: space-between;
+           align-items: center;
+           z-index: 100;
+		   padding-bottom: 20px;
+		   padding-top: 50px;
+		  
+           
+}
+
+      .logo {
+        font-size: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        animation: slideRight 1s ease forwards;
+		margin-left: 100px;
+}
+
+         .navbar a {
+           display: inline-block;
+           color: black;;
+           font-size: 20px;
+           text-decoration: none;
+           font-weight: 500;
+           margin-left: 35px;
+           transition: 0.3s;
+           animation: slideTop 1s ease forwards;
+           animation-delay: calc(.2s * var(--i));
+		   
+}
+      .navbar a:last-child {
+    margin-right: 50px;
+}
+
+        .navbar a:hover,
+        .navbar a.active {
+          color: #b7b2a9;
+}
+
+	</style>
+</head>
+
+<body>
+    <header class="header">
+    <div class="logo" style="cursor:pointer"><a href="index.html" style="text-decoration:none;color:black">P&C</a></div>
+       <nav class="navbar">
+	    <a href="List_of_place.html" class="item">Category</a>
+      <a href="#" class="item" style="...">Package</a>
+      <a href="aboutus.html" class="item" >AboutUs</a>
+      </nav>
+  </header>
+	<div class="container">
+	
+	<!-- banner section -->
+	<section class="banner">
+		
+		<h1>Get in Touch With Us</h1>
+		<p>We're here to answer any questions you may have.</p>
+		<h2>Contact Information</h2>
+		<address>
+			Tourismmm<br>
+			123 Main Street<br>
+			Cyberjaya, 56000<br>
+			Phone: <a href="tel:1234567890" style="text-decoration:none">123-456-7890</a><br>
+			Email: <a href="mailto:mmu@gmail.com" style="text-decoration:none">mmu@gmail.com</a>
+		</address>
+	</section>
+	
+	<!-- Contact form -->
+	<section class="contact-form">
+		<div class="form-container">
+			<h2>Let's Talk</h2>
+			<form action="#" method="POST">
+
+				<label for="name">Name: </label>
+				<input type="text" id="name" name="name" required>
+
+				<label for="email">Email: </label>
+				<input type="email" id="email" name="email" required>
+
+				<label for="phone">Phone: </label>
+				<input type="tel" id="phone" name="phone">
+
+				<label for="message">Message: </label>
+				<textarea id="message" name="message" rows="4" required></textarea>
+
+				<button type="submit" class="submit-button">Submit</button>
+			</form>
+		</div>
+	</section>
+	</div>
+
+	<!-- Footer section -->
+	<footer>
+	<h5>Find Us On</h5>
+	<div class="icon">
+		<i class="fa fa-facebook-official"></i>
+		<i class="fa fa-instagram"></i>
+		<i class="fa fa-snapchat"></i>
+		<i class="fa fa-pinterest-p "></i>
+		<i class="fa fa-twitter"></i>
+		<i class="fa fa-linkedin"></i>
+	</div>
+	<p>© 2024 MMU. All rights reserved.</p>
+	</footer>
+</body>
+
+</html>

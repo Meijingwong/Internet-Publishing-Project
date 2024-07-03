@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="shoppingcart.css">
+<script src="shoppingcart.js"></script>
+</head>
+<body>
+ <section class="cart">
+ <h4 style="float:left;">Shopping Cart<span style="float:right;">3 items</span></h4>
+<table>
+  <tr>
+  <td><div class="product">
+    <img src="path_to_image" alt="one day">
+    </div></td>
+    <td>
+	  <p class="product-description">Package</p>
+      <div class="product-title">One-Day Tours Plan</div>
+    </td>
+    <td>
+    <div class="product-quantity">
+      <button class="btn_de" style="background: none; border: none; color: blue;">-</button><span class="quantity">1</span><button class="btn_in" style="background: none; border: none; color: blue;">+</button>
+    </div></td>
+    <td>
+	<div class="product-price">RM 44.00</div>
+    <button class="remove-product">&#10005;</button>
+    </td></tr>
+
+  <tr>
+  <td><div class="product">
+      <img src="path_to_image" alt="two days">
+    </div></td>
+    <td>
+      <p class="product-description">Package</p>
+      <div class="product-title">Two-Days Tours Plan</div>
+    </td>
+    <td>
+    <div class="product-quantity">
+      <button class="btn_de" style="background: none; border: none; color: blue;">-</button><span class="quantity">1</span><button class="btn_in" style="background: none; border: none; color: blue;">+</button>
+    </div></td>
+    <td><div class="product-price">RM 88.00</div>
+    <button class="remove-product">&#10005;</button>
+    </td></tr>
+
+  <tr>
+  <td><div class="product">
+      <img src="path_to_image" alt="three days">
+    </div></td>
+    <td>
+      <p class="product-description">Package</p>
+      <div class="product-title">Three-Days Tours Plan</div>
+    </td>
+    <td>
+    <div class="product-quantity">
+      <button class="btn_de" style="background: none; border: none; color: blue;">-</button><span class="quantity">1</span><button class="btn_in" style="background: none; border: none; color: blue;">+</button>
+    </div></td>
+    <td>
+	<div class="product-price">RM 128.00</div>
+    <button class="remove-product">&#10005;</button>
+    </td></tr>
+ </table>
+ <div class="title">
+ <p>Subtotal<span id="subtotal">260.00</span></p>
+ </div>
+ </section> 
+ 
+ <section class="summary">
+    <div><h5><b>Summary</b></h5></div>
+    <hr>
+	<div style="float:left;">3 ITEMS</div>
+	<span style="float:right;">RM <span id="total_price">260.00</span></span>
+	<form>
+        <p>SHIPPING</p>
+        <select><option class="shipping">Standard-Delivery- RM15.00</option></select>
+        <p>GIVE CODE</p>
+        <input style="color: black;" id="code" placeholder="Enter your code"/>
+	</form>
+	<div class="row" style="border-top: 1px solid rgba(0,0,0,0.1); padding: 2vh 0vh;">
+        <div class="col" style="float:left;">TOTAL PRICE</div>
+        <span style="float:right;">RM <span id="total">188.00</span></span>
+    </div>
+      <button class="checkout">Checkout</button>
+</section>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="icon" href="https://image.freepik.com/free-vector/travel-logo_15146-33.jpg" type="image/x-icon"/>
+  <link rel="stylesheet" href="landingpage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+  <script src="landing.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+  <section>
+  <nav>
+    <div class="nav_header">
+      <div class="nav_logo">
+        <a href="index.html">P&C</a>
+      </div>
+      <ul class="nav_links" id="nav-links">
+	   <li><a href="#">PACKAGE</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="contactUs.html">CONTACT</a></li>
+      </ul>
+      <div class="nav_btns">
+	     <li style="list-style-type:none;padding-right: 10px"><a href="#" id="signOutLink" onclick="confirmSignOut()">SIGN OUT</a></li>
+        <button class="btn"><i class="fa-solid fa-circle-info"></i></button>
+        <button class="btn"><i class="fa-solid fa-bag-shopping"></i></button>
+      </div>
+    </div>
+  </nav>
+  </section>
+  <section class="container">
+   <div class="container_left">
+    <h1 >Enjoy Your Holidays</h1>
+	  <div class="container_btn">
+	   <button class="btn"><a href="List_of_place.html" style="background-color:black;color:white">Lets Go</a></button>
+	  </div>
+	  </div>
+	   </section> 
+		
+<section class="container_left">
+<div class="slideshow-container">
+
+ 
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="image/party.png" style="width:100%;">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="image/bus.png" style="width:100%;">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="image/hotelpromotion.png" style="width:100%;">
+  </div>
+
+  <!-- The dots/circles -->
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+		 
+	</section>	
+		
+		<div id="socials">
+		<span>
+		   <a href="#"><i class="fa-brands fa-facebook"></i></a>
+		  <span>
+		  
+		  <span>
+		   <a href="#"<i class="fa-brands fa-instagram"></i></a>
+		  <span>
+		  
+		  <span>
+		   <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+		  <span>
+		</div>
+		
+		<script>
+		let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+let autoSlideInterval = setInterval(() => {
+  plusSlides(1); 
+}, 3000); 
+
+
+let slideshowContainer = document.querySelector('.slideshow-container');
+slideshowContainer.addEventListener('mouseenter', () => {
+  clearInterval(autoSlideInterval);
+});
+slideshowContainer.addEventListener('mouseleave', () => {
+  autoSlideInterval = setInterval(() => {
+    plusSlides(1); 
+  }, 3000);
+});
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+ScrollReveal().reveal(".container_left h1", {
+  delay: 200,
+  origin: 'bottom',
+  distance: '20px',
+  duration: 1000,
+  opacity: 0,
+  scale: 0.9
+});
+ScrollReveal().reveal(".container_left .container_btn", {
+  delay: 500,
+  origin: 'bottom',
+  distance: '20px',
+  duration: 1000,
+  opacity: 0,
+  scale: 0.9
+});
+
+ScrollReveal().reveal("#socials", {
+  delay: 600,
+  origin: 'bottom',
+  distance: '20px',
+  duration: 1000,
+  opacity: 0,
+  scale: 0.9
+});
+
+
+function confirmSignOut() {
+   console.log("confirmSignOut function called.");
+   if (confirm("Are you sure you want to Sign out?")) {
+     console.log("User confirmed sign out.");
+     window.location.href = "../User_page/User_Signin.html";
+   } else {
+     console.log("User canceled sign out.");
+   }
+ }
+
+
+</script>
+</body>
+</html>
