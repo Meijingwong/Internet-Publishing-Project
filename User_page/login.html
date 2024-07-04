@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOURING URBAN CITIES: CYBERJAYA & PUTRAJAYA</title>
+  
+   <style>
+   .check {
+   
+    background-size: 50px 30px;
+    margin: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-left: 260px;
+    margin-right: 260px;
+}
+
+.vulnerability-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 40px;
+    margin-bottom: 40px; /* Reduce margin-bottom to prevent extra space */
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top: -20px; /* Move the box upward */
+}
+
+
+.vulnerability-box h2 {
+    margin: 0;
+    font-size: 30px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.vulnerability-box ul {
+    display: none;
+    margin-top: 10px;
+}
+
+
+.vulnerability-box.active ul {
+    display: block;
+}
+
+.icon-container {
+    position: absolute; 
+    left: 15px;
+    top: 40px;
+   display: flex;
+   align-items: center;
+}
+
+.icon-container i {
+    margin-right: 10px;
+   
+    transition: transform 0.3s; 
+}
+
+
+.vulnerability-box.active .icon-container i {
+    transform: rotate(180deg);
+}
+
+#clickjack, #sql, #hostname, #scheme, #authenticate, #authorize, #cookies, #thirdParty {
+    margin-left: 25px;
+    font-size: 1.4em;
+}
+
+.tipforDev{
+    
+     margin: 0;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-left: 260px;
+    margin-right: 260px;
+    
+}
+
+#tipDev{
+    margin: 0;
+    margin-left: 25px;
+    padding-top: 0;
+    font-size: 1.4em;
+}
+
+#tipUser{
+    margin-left: 25px;
+    font-size: 1.4em;
+}
+#tipforDev-box{
+     padding-bottom: 0px;
+}
+
+#tipforUser-box {
+    margin-bottom:200px; /* Add margin to the bottom */
+}
+
+   </style>
+  
+</head>
+<body>
+<section>
+  <div class="container">
+    <div class="box form-box">
+      <h2>Login</h2>
+      <form action="#">
+	    
+        <div class="field-input">
+          <span class="icon3"><img src="user_icon.png"></span>
+          <input type="text" name="username" id="username" size="40px" required>
+          <label for="username">Username</label><br>
+        </div>
+        <div class="field-input">
+          <span class="icon3"><img src="password_icon.png"></span>
+          <input type="password" name="password" id="password" size="40px" required>
+          <label for="password">Password</label><br>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <div class="field input" id="submit">
+          <input type="submit" id="btn2" name="btn-submit" value="Login">
+        </div>
+        <div class="links">
+          Don't have an account? <a href="register.html">Sign Up Now</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</body>
+</html>

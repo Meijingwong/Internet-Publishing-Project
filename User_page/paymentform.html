@@ -46,7 +46,9 @@
 		<div>
         <button type="button" class="btn" onclick="openPopup()">Click to checkout</button>
 			<div class="popup" id="popup">
-				<button type="button" onclick="closePopup()">&times;</button>
+				<button type="button" onclick="closePopup()">&times;
+          
+        </button>
 				<h2>Thank You!</h2>
 				<p>Your payment has been successfully made.</p>
 			</div>
@@ -64,6 +66,7 @@ function openPopup(){
 }
 function closePopup(){
 	popup.classList.remove("open-popup");
+  window.open('ratingform.html');
 }
 </script>
 </body>

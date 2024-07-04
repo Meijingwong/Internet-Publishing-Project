@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Ultimate Travel Companion</title>
+
+    <style>
+       .package-preview .preview .btn-close {
+        border-radius: 50%;
+        border: 2px solid #aefcdb;
+        box-shadow: 0 2px 4px #c2b2c2;
+        color: rgb(96, 96, 96);
+        position: absolute;
+        cursor: pointer;
+        right: 4px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .25s;
+       }
+
+      .package-preview .preview .btn-close:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px #c9fabb;
+        background: #96e7f2;
+        color: whitesmoke;
+        }
+    </style>
+  </head>
+  <body>
+    <!--News-->
+    <div class="news-container">
+      <div class="title">Breaking News</div>
+      <ul>
+        <li>Our Website Launches 24/7 Customer Support for All Travelers.</li>
+        <li>Don't Miss Out! Popular Travel Platform Launches Flash Sale on Vacation Packages!</li>
+        <li>Explore New Destinations with Freshly Uploaded Travel Packages.</li>
+        <li>New travel packages are now available on our website!</li>
+      </ul>
+    </div>
+
+    <div class="home">
+      <div class="container1">
+        <div class="row">
+          <div class="caption">
+            <h1><strong>Your Ultimate <span>Travel Companion</span></strong></h1>
+            <p class="animate-text">
+              <span>Unlock your adventure</span>
+              <span>Navigate journey with ease</span>
+              <span>Your journey START NOW</span>
+              <span>Explore, Experience, Enjoy!</span>
+            </p>
+          </div>
+          
+           <!--Background's image-->
+          <div>
+            <section class="parallax">
+              <img src="sky.jpg" class="sky" alt="sky">
+              <img src="plane.png" class="plane" alt="plane">
+              <img src="building.png" class="building" alt="building">
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section></section>
+
+    <!--Filter Buttons-->
+    <section class="filter">
+      <div class="filter-container">
+        <div class = "package-caption">
+          <h2>Hassle-free Tourism Packages</h2>
+          <p>Embark on a stress-free journey of discovery with our meticulously crafted tourism packages. Dive into vibrant cultures, explore breathtaking landscapes, and create unforgettable memories, all without the hassle of planning. Whether you crave the bustling streets of a cosmopolitan city or the serene beauty of nature's wonders, our packages cater to every traveler's dream. Sit back, relax, and let us guide you on an unforgettable adventure filled with excitement and wonder.</p>
+        </div>
+
+        <div class="filter-btns">
+          <button type="button" class="filter-btn active" id="all">All Packages</button>
+          <button type="button" class="filter-btn" id="cyberjaya">Cyberjaya</button>
+          <button type="button" class="filter-btn" id="putrajaya">Putrajaya</button>
+        </div>
+      
+        <div class="packages">
+          <!--Package-->
+          <div class="package all cyberjaya putrajaya"  data-name="P1">
+            <div class="package-img">
+              <img src="3D2N.jpg" alt="come come">
+            </div>
+            <div class="package-content">
+              <h2 class="package-name">Urban Oasis Retreat&#128151<span style="display: block;font-size: 80%;font-weight: lighter;color: #68949a;">3D2N Cyberjaya and Putrajaya Discovery</span></h2>
+              <h3 class="package-price">RM 128</h3>
+            </div>
+          </div>
+
+          <div class="package all cyberjaya" data-name="P2">
+            <div class="package-img">
+              <img src="cyberjaya.jpg" alt="Welcome to Cyberjaya">
+            </div>
+            <div class="package-content">
+              <h2 class="package-name">Cyberjaya Snapshot<span style="display: block;font-size: 80%;font-weight: lighter;color: #68949a;">Essence of Tomorrow's City in 24 Hours</h2>
+              <h3 class="package-price">RM 44</h3>
+            </div>
+          </div>
+
+          <div class="package all putrajaya" data-name="P3">
+            <div class="package-img">
+              <img src="putrajaya.jpg" alt="Welcome to Putrajaya">
+            </div>
+            <div class="package-content">
+              <h2 class="package-name">A Day of Iconic Sights<span style="display: block;font-size: 80%;font-weight: lighter;color: #68949a;">Day Trip to Putrajaya</span></h2>
+              <h3 class="package-price">RM 44</h3>
+            </div>
+          </div>
+
+          <div class="package all putrajaya cyberjaya"  data-name="P4">
+            <div class="package-img">
+              <img src="2days.webp" alt="">
+            </div>
+            <div class="package-content">
+              <h2 class="package-name">Futuristic Fun in Twin Cities<span style="display: block;font-size: 80%;font-weight: lighter;color: #68949a;">2-Days Cyberjaya and Putrajaya Break</span></h2>
+              <h3 class="package-price">RM 88</h3>
+            </div>
+          </div>
+          <!--End Preview-->
+        </div>
+
+        <!--Preview Windows-->
+        <div class="package-preview">
+          <div class="preview active" data-target="P1">
+            <button class="btn-close" onclick="togglePopup()" title="Close">&times</button>
+            <div class="preview-img"><img src="pre1.jpg" alt=""></div>
+            <h3>Urban Oasis Retreat&#128151</h3>
+            <p>Dive into the heart of Cyberjaya and Putrajaya on our captivating 3 days, 2 nights Discovery Package. Experience the fusion of modernity and serenity as you explore these dynamic cities. Book now for an unforgettable journey! </p>
+            <div class="price">RM 128.00</div>
+            <div class="buttons">
+              <a href="1.html" id="quickView" class="details" onclick="openLink('1.html')">Quick View</a>
+              <a href="paymentform.html" id="buyNow" class="buy" onclick="openLink('paymentform.html')">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="preview active" data-target="P2">
+            <button class="btn-close" onclick="togglePopup()" title="Close">&times</button>
+            <div class="preview-img"><img src="pre2.jpg" alt=""></div>
+            <h3>Cyberjaya Snapshot&#129331</h3>
+            <p>Cap off your day with a visit to Cyberjaya's vibrant shopping and entertainment districts, where you can shop for unique souvenirs, catch a movie, or unwind with a relaxing spa treatment. With its seamless blend of technology, culture, and leisure, a day in Cyberjaya promises to be a memorable journey for all.</p>
+            <div class="price">RM 44.00</div>
+            <div class="buttons">
+              <a href="1b.html" id="quickView" class="details" onclick="openLink('1b.html')">Quick View</a>
+              <a href="paymentform.html" id="buyNow" class="buy" onclick="openLink('paymentform.html')">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="preview active" data-target="P3">
+            <button class="btn-close" onclick="togglePopup()" title="Close">&times</button>
+            <div class="preview-img"><img src="pre3.jpg" alt=""></div>
+            <h3>A Day of Iconic Sights &#128374</h3>\
+            <p>Discover Putrajaya's charm in just one day! Explore iconic landmarks, scenic lakeside views, and lush gardens. Enjoy a delicious Malaysian lunch and immerse yourself in the city's vibrant atmosphere. With expert guides and convenient transportation, experience the best of Malaysia's modern capital effortlessly.</p>
+            <div class="price">RM 44.00</div>
+            <div class="buttons">
+              <a href="1c.html" id="quickView" class="details" onclick="openLink('1c.html')">Quick View</a>
+              <a href="paymentform.html" id="buyNow" class="buy" onclick="openLink('paymentform.html')">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="preview active" data-target="P4">
+            <button class="btn-close" onclick="togglePopup()" title="Close">&times</button>
+            <div class="preview-img"><img src="pre3.jpg" alt=""></div>
+            <h3>Futuristic Fun in Twin Cities&#9996</h3>
+            <p>Embark on a 2-day, 1-night journey through Malaysia's modern marvels and serene landscapes. Explore Cyberjaya's technological hub and discover Putrajaya's blend of tradition and modernity. Experience seamless transportation, comfortable accommodation, and unforgettable sights on this captivating tour. Join us for a memorable getaway in these Malaysian gems.</p>
+            <div class="price">RM 128.00</div>
+            <div class="buttons">
+              <a href="1d.html" id="quickView" class="details" onclick="openLink('1d.html')">Quick View</a>
+              <a href="paymentform.html" id="buyNow" class="buy" onclick="openLink('paymentform.html')">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <h1></h1>
+    </footer>
+    
+<!--slide up multi text animation--> 
+    <script>
+            const txts = document.querySelector(".animate-text").children,
+                  txtsLen = txts.length;
+              let index = 0;
+            const textInTimer = 3000,
+                  textOutTimer = 2800;
+
+            function animateText() {
+              for(let i=0;i<txtsLen;i++) {
+                txts[i].classList.remove("text-in", "text-out");
+              }
+
+              txts[index].classList.add("text-in");
+
+              setTimeout(function(){
+                txts[index].classList.add("text-out");
+              },textOutTimer)
+
+              setTimeout(function(){
+                if(index == txtsLen-1){
+                index=0;
+                }
+              else{
+                index++;
+                }
+                animateText();
+              }, textInTimer);
+            }
+            window.onload = animateText;
+    </script>
+
+    <!--used for aeroplane, building & sky-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" integrity="sha512-5efjkDjhldlK+BrHauVYJpbjKrtNemLZksZWxd6Wdxvm06dceqWGLLNjZywOkvW7BF032ktHRMUOarbK9d60bg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      var parallax = gsap.timeline();
+      parallax
+          .to('.sky',{
+              scale: 1,
+              x: "-20vw"
+          })
+          .to('.plane',{
+              x: "95vw",
+              y: "-95vh",
+              scale: 0.4
+          },"<")
+          .to('.building',{
+              scale: 1,
+              y: 0
+          },"<")
+
+      ScrollTrigger.create({
+          animation: parallax,
+          trigger:'.parallax',
+          start:"top 0%",
+          end: "bottom 0%",
+          scrub: 2,
+          pin: true
+      })
+    </script>
+
+    <!--Preview button effect on click-->
+    <script type="text/javascript">
+      const buttons = document.querySelectorAll('.package-preview .preview .buttons a');
+      buttons.forEach(btn => {
+        btn.addEventListener('click',function(e) {
+          e.preventDefault();
+          const rect = btn.getBoundingClientRect();
+          let x = e.clientX - rect.left;
+          let y = e.clientY - rect.top;
+
+          let ripples = document.createElement('span');
+          ripples.classList.add('ripple');
+          ripples.style.left = x + 'px';
+          ripples.style.top = y + 'px';
+          this.appendChild(ripples);
+
+          setTimeout(() => {
+            ripples.remove()
+          },1000);
+        })
+      })
+    </script>
+
+    <script src="script.js"></script>
+
+    <script>
+      function openLink(url) {
+        window.location.href = url;
+      }
+    </script>
+
+    <!--used for click to show preview-->
+    <script src="preview.js"></script>
+  </body>
+</html>

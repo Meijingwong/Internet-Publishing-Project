@@ -23,11 +23,16 @@
 			</div>
 			<textarea name="opinion" cols="30" rows="5" placeholder="Tell us about your expeience!"></textarea>
 			<div class="submit_clear">
-				<button type="submit" class="btn_submit">Send</button>
-				<button type="clear" class="btn_cancel">Clear</button>
+				<button type="submit" class="btn_submit">Done</button>
+				<button type="button" class="btn_cancel" onclick="openLink('Trip_Package.html')">Close</button>
 			</div>
 		</form>
 	</div>
-  
+
+	<script>
+		function openLink(url) {
+			window.location.href = url;
+		}
+	</script>
 </body>
 </html>

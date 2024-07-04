@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Product</title>
+    <link type="text/css" rel="stylesheet" href="Manage_product_style.css">
+     <script src="manage_product.js"></script>
+</head>
+<body>
+  <span id="exit"  onclick="redirectTomainPage()" style="cursor:pointer">
+    <img src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-1024.png" alt="exit">
+     </span>
+   <table>
+      <tr>
+        <td>
+          <form autocomplete="off" onsubmit="onFormSubmit(event)">
+             <div>
+                <label for="productCode">Package Code</label>
+                <input type="text" name="productCode" id="productCode">
+              </div>
+              <div>
+                <label for="productName">Package Name</label>
+                <input type="text" name="productName" id="productName">
+              </div>
+              <div>
+                <label for="qty">Qty</label><br>
+                <input type="number" name="qty" id="qty">
+              </div>
+              <div>
+                <label for="perPrice">Price</label>
+                <input type="number" name="perPrice" id="perPrice">
+              </div>
+			  <div>
+			  <label for="pro_img"></label>
+              <input type="file" id="productImage" accept="image/*" name="pro_img" style="padding-bottom:20px" required>
+              </div>
+			  <div class="form_action-button">
+                 <input class="submit" type="submit" value="Submit" >
+                 <input class="reset" type="reset" value="Reset">
+              </div>
+           </form>
+           
+            
+         </td>
+      </tr>
+   </table>
+      <table class="list" id="storeList">
+                 <thead>
+                   <tr>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+					<th>Image</th>
+                    </tr>
+                 </thead>
+                 <tbody> <!-- Ensure that a tbody element exists -->
+                 </tbody>
+               </table>
+   
+    <script
+	 
+
+	</script>
+     
+</body>
+</html>
