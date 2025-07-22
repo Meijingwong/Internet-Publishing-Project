@@ -6,7 +6,6 @@ A web-based tourism platform that promotes the hidden gems of Cyberjaya and Putr
 
 This website aims to highlight tourist destinations in Cyberjaya and Putrajaya through an interactive and user-friendly platform. It allows users to browse categorized attractions, select travel packages, manage bookings, and provide feedback — while administrators and staff manage destinations, users, and orders efficiently through a dedicated dashboard.
 
-🔗 [Project Demo & Source Code](https://drive.google.com/drive/folders/1uEXcWjVZZpweU9nSESgI89lQ3Rn89zNM?usp=drive_link)
 
 ## 🎯 Objectives
 
